@@ -1,0 +1,29 @@
+{
+	"name": "hy-form",
+	"version": "1.0.0",
+	"description": "",
+	"main": "dist/Hy-form.mjs",
+	"module": "dist/Hy-form.umd.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"serve": "vite ",
+		"build": "vue-tsc && vite build"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "MIT",
+	"dependencies": {
+		"@arco-design/web-vue": "^2.51.1",
+		"vue": "^3.3.4"
+	},
+	"devDependencies": {
+		"@arco-plugins/vite-vue": "^1.4.5",
+		"@vitejs/plugin-vue": "^4.1.0",
+		"@vitejs/plugin-vue-jsx": "^3.0.1",
+		"sass": "^1.66.1",
+		"unplugin-auto-import": "^0.16.6",
+		"unplugin-vue-components": "^0.25.2",
+		"vite": "^4.4.9",
+		"vue-tsc": "^1.8.10"
+	}
+}
