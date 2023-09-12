@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import { componentMap } from "./index.ts";
+import { componentMap } from "./utils.ts";
 
 defineProps({
 	type: null, // 类型

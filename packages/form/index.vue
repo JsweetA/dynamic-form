@@ -10,6 +10,9 @@
 			<a-form-item v-if="slots.default">
 				<slot></slot>
 			</a-form-item>
+			<!-- <div>
+				<hyComponents />
+			</div> -->
 		</a-form>
 	</div>
 </template>
@@ -17,6 +20,7 @@
 <script setup lang="ts">
 import { watch, ref, useSlots, computed } from "vue";
 import factory from "./factory/index.vue";
+// import hyComponents from "./components/index";
 
 const slots = useSlots();
 const props = defineProps({
