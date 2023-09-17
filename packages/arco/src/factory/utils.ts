@@ -1,4 +1,4 @@
-const generateComp = () => {
+const generateArcoComp = () => {
 	const modules = import.meta.glob("../components/arco/*.vue", {
 		eager: true,
 		import: "default",
@@ -13,4 +13,5 @@ const generateComp = () => {
 	return map;
 };
 
-export const componentMap = generateComp();
+export { generateArcoComp };
+export const componentMap = generateArcoComp();

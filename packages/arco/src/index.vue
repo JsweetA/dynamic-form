@@ -2,24 +2,22 @@
 	<div>
 		<a-form ref="formRef" :model="fData" label-align="right" auto-label-width>
 			<a-form-item class="formItem" v-for="item of config" v-bind="item" :key="item?.field">
-				<factory v-if="item?.type !== 'slot'" :type="item?.type" :item="item" :data="fData" />
-				<!-- slot -->
+				<Itemfactory v-if="item?.type !== 'slot'" :type="item?.type" :item="item" :data="fData" />
+
 				<slot v-else :name="item?.name" :item="item"></slot>
 			</a-form-item>
 
 			<a-form-item v-if="slots.default">
 				<slot></slot>
 			</a-form-item>
-			<!-- <div>
-				<hyComponents />
-			</div> -->
 		</a-form>
 	</div>
 </template>
 
 <script setup lang="ts">
 import { watch, ref, useSlots, computed } from "vue";
-import factory from "./factory/index.vue";
+import Itemfactory from "./factory/createFormItem.vue";
+import { deepClone } from "@utils/core";
 // import hyComponents from "./components/index";
 
 const slots = useSlots();
@@ -52,7 +50,7 @@ watch(
 	() => props.formData,
 	() => {
 		// 通过配置文件格式化数据
-		fData.value = JSON.parse(JSON.stringify(props?.formData)) || {};
+		fData.value = deepClone(props?.formData) || {};
 	},
 	{
 		deep: true,

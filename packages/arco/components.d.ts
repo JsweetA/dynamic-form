@@ -13,6 +13,8 @@ declare module 'vue' {
     Number: typeof import('./src/components/arco/Number.vue')['default']
     Password: typeof import('./src/components/arco/Password.vue')['default']
     Radio: typeof import('./src/components/arco/Radio.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
     Select: typeof import('./src/components/arco/Select.vue')['default']
   }
 }

@@ -34,7 +34,7 @@ export default defineConfig({
 	build: {
 		lib: {
 			// Could also be a dictionary or array of multiple entry points
-			entry: resolve(__dirname, "packages/index.ts"),
+			entry: resolve(__dirname, "./index.ts"),
 			name: "Hy-form",
 			// the proper extensions will be added
 			fileName: "Hy-form",
@@ -68,6 +68,6 @@ export default defineConfig({
 		},
 	},
 	server: {
-		open: "./examples/index.html",
+		open: "./examples/web-demo/index.html",
 	},
 });
