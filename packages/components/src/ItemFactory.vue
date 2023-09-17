@@ -14,7 +14,7 @@ import { parseEvent, parseProps, getPlaceholder } from "@utils/core";
 defineProps({
 	type: null, // 类型
 	item: null, // 配置项
-	data: null, // 双向绑定的数据
+	data: null, // 双向绑定的数据（利用的引用类型数据逃离了数据单向的限制）
 	componentMap: null,
 });
 // 抽离type 由于直接绑定会把type也绑定上去，导致卡死
