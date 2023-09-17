@@ -16,6 +16,9 @@ importers:
       '@arco-plugins/vite-vue':
         specifier: ^1.4.5
         version: registry.npmmirror.com/@arco-plugins/vite-vue@1.4.5
+      '@hy-form/components':
+        specifier: workspace:^
+        version: link:../components
       '@utils/core':
         specifier: workspace:^
         version: link:../utils
@@ -244,15 +247,27 @@ importers:
         specifier: ^3.3.4
         version: registry.npmmirror.com/vue@3.3.4
     devDependencies:
-      '@arco/core':
+      '@hy-form/arco':
         specifier: workspace:^
         version: link:../..
+      '@utils/core':
+        specifier: workspace:^
+        version: link:../../../utils
       '@vitejs/plugin-vue':
         specifier: ^4.2.3
         version: registry.npmmirror.com/@vitejs/plugin-vue@4.3.4(vite@4.4.9)(vue@3.3.4)
       vite:
         specifier: ^4.4.5
         version: registry.npmmirror.com/vite@4.4.9(sass@1.66.1)
+
+  packages/components:
+    dependencies:
+      '@utils/core':
+        specifier: workspace:^
+        version: link:../utils
+      vue:
+        specifier: ^3.3.4
+        version: registry.npmmirror.com/vue@3.3.4
 
   packages/utils: {}
 

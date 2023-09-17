@@ -2,7 +2,13 @@
 	<div>
 		<a-form ref="formRef" :model="fData" label-align="right" auto-label-width>
 			<a-form-item class="formItem" v-for="item of config" v-bind="item" :key="item?.field">
-				<Itemfactory v-if="item?.type !== 'slot'" :type="item?.type" :item="item" :data="fData" />
+				<ItemFactory
+					v-if="item?.type !== 'slot'"
+					:type="item?.type"
+					:item="item"
+					:data="fData"
+					:componentMap="componentMap"
+				/>
 
 				<slot v-else :name="item?.name" :item="item"></slot>
 			</a-form-item>
@@ -16,9 +22,9 @@
 
 <script setup lang="ts">
 import { watch, ref, useSlots, computed } from "vue";
-import Itemfactory from "./factory/createFormItem.vue";
+import { ItemFactory } from "@hy-form/components";
 import { deepClone } from "@utils/core";
-// import hyComponents from "./components/index";
+import { componentMap } from "./components";
 
 const slots = useSlots();
 const props = defineProps({
@@ -30,18 +36,11 @@ const props = defineProps({
 		default: null,
 		type: Object,
 	},
-	state: {
-		default: "edit",
-		type: String,
-	},
-	isEdit: {
-		default: true,
-		type: Boolean,
-	},
 });
-// const emits = defineEmits(["validated", "submit"]);
 const fData = ref();
 const formRef = ref();
+
+// 利用computed属性实现动态配置项
 const config = computed(() => {
 	return props?.config;
 });

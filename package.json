@@ -6,7 +6,8 @@
 	"module": "dist/Hy-form.umd.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"serve": "vite ",
+		"serve:arco-vue": "cd ./packages/arco/examples/vue-example && vite",
+		"serve:arco-dev": "cd ./packages/arco && vite",
 		"mp": "cd ./examples/uniapp-demo && pnpm mp",
 		"build:arco": "cd ./packages/arco && pnpm build"
 	},

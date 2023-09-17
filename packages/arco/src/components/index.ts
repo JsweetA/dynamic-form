@@ -1,5 +1,5 @@
 const generateArcoComp = () => {
-	const modules = import.meta.glob("../components/arco/*.vue", {
+	const modules = import.meta.glob("../components/*.vue", {
 		eager: true,
 		import: "default",
 	}) as any;

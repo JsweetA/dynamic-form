@@ -1,8 +1,9 @@
 import { createApp } from "vue";
-import "./style.css";
+
 import App from "./App.vue";
-import Hyform from "@arco/core";
-import "@arco/core/dist/style.css";
+import Hyform from "@hy-form/arco";
+import "@hy-form/arco/dist/style.css";
+// import Hyform from "../../../index";
 
 createApp(App)
 	.use(Hyform)

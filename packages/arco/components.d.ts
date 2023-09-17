@@ -7,14 +7,14 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    Checkbox: typeof import('./src/components/arco/Checkbox.vue')['default']
-    Date: typeof import('./src/components/arco/Date.vue')['default']
-    Input: typeof import('./src/components/arco/Input.vue')['default']
-    Number: typeof import('./src/components/arco/Number.vue')['default']
-    Password: typeof import('./src/components/arco/Password.vue')['default']
-    Radio: typeof import('./src/components/arco/Radio.vue')['default']
+    Checkbox: typeof import('./src/components/Checkbox.vue')['default']
+    Date: typeof import('./src/components/Date.vue')['default']
+    Input: typeof import('./src/components/Input.vue')['default']
+    Number: typeof import('./src/components/Number.vue')['default']
+    Password: typeof import('./src/components/Password.vue')['default']
+    Radio: typeof import('./src/components/Radio.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    Select: typeof import('./src/components/arco/Select.vue')['default']
+    Select: typeof import('./src/components/Select.vue')['default']
   }
 }
