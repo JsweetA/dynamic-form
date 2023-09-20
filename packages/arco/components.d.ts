@@ -13,8 +13,6 @@ declare module 'vue' {
     Number: typeof import('./src/components/Number.vue')['default']
     Password: typeof import('./src/components/Password.vue')['default']
     Radio: typeof import('./src/components/Radio.vue')['default']
-    RouterLink: typeof import('vue-router')['RouterLink']
-    RouterView: typeof import('vue-router')['RouterView']
     Select: typeof import('./src/components/Select.vue')['default']
   }
 }

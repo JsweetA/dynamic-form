@@ -9,10 +9,22 @@
 		"serve:web": "vite",
 		"build": "vue-tsc && vite build"
 	},
+	"files": [
+		"README.md",
+		"package.json",
+		"LICENSE",
+		"src",
+		"types",
+		"dist"
+	],
 	"keywords": [],
 	"author": "Jsweet",
 	"dependencies": {
 		"vue": "^3.3.4"
+	},
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
 	},
 	"devDependencies": {
 		"@arco-design/web-vue": "^2.51.1",
@@ -27,5 +39,5 @@
 		"vite": "^4.4.9",
 		"vue-tsc": "^1.8.10"
 	},
-	"license": "ISC"
+	"license": "MIT"
 }
