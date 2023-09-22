@@ -18,6 +18,7 @@
 	"keywords": [],
 	"author": "",
 	"license": "MIT",
-	"dependencies": {},
-	"devDependencies": {}
+	"devDependencies": {
+		"@changesets/cli": "^2.26.2"
+	}
 }

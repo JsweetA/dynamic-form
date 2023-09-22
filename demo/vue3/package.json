@@ -12,8 +12,8 @@
 		"vue": "^3.3.4"
 	},
 	"devDependencies": {
-		"@hy-form/arco": "workspace:^",
-		"@hy-form/utils": "workspace:^",
+		"@hy-form/arco": "^1.0.0",
+		"@hy-form/utils": "^1.0.0",
 		"@vitejs/plugin-vue": "^4.2.3",
 		"vite": "^4.4.5"
 	}
