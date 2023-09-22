@@ -9,7 +9,7 @@
 
 <script setup>
 import { computed, ref } from "vue";
-import { deepClone } from "@utils/core";
+import { deepClone } from "@hy-form/utils";
 
 const form = ref();
 const formConfig = [

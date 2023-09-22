@@ -1,6 +1,6 @@
 {
 	"name": "@hy-form/arco",
-	"version": "1.0.0",
+	"version": "1.0.2",
 	"description": "",
 	"main": "./dist/Hy-form.umd.js",
 	"module": "./dist/Hy-form.mjs",
@@ -15,7 +15,8 @@
 		"LICENSE",
 		"src",
 		"types",
-		"dist"
+		"dist",
+		"example"
 	],
 	"keywords": [],
 	"author": "Jsweet",
@@ -30,7 +31,7 @@
 		"@arco-design/web-vue": "^2.51.1",
 		"@arco-plugins/vite-vue": "^1.4.5",
 		"@hy-form/components": "workspace:^",
-		"@utils/core": "workspace:^",
+		"@hy-form/utils": "workspace:^",
 		"@vitejs/plugin-vue": "^4.1.0",
 		"@vitejs/plugin-vue-jsx": "^3.0.1",
 		"sass": "^1.66.1",

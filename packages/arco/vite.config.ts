@@ -68,6 +68,6 @@ export default defineConfig({
 		},
 	},
 	server: {
-		open: "./examples/web-demo/index.html",
+		open: "./examples/index.html",
 	},
 });

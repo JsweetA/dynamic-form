@@ -10,7 +10,7 @@
 	"author": "Jsweet",
 	"license": "ISC",
 	"dependencies": {
-		"@utils/core": "workspace:^",
+		"@hy-form/utils": "workspace:^",
 		"vue": "^3.3.4"
 	}
 }

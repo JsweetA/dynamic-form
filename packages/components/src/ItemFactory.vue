@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import { parseEvent, parseProps, getPlaceholder } from "@utils/core";
+import { parseEvent, parseProps, getPlaceholder } from "@hy-form/utils";
 
 defineProps({
 	type: null, // 类型
