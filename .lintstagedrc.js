@@ -1,9 +1,9 @@
 const { ESLint } = require("eslint");
 
-const removeIgoredFiles = async (files) => {
+const removeIgnoredFiles = async (files) => {
   const eslint = new ESLint();
   const ignoredFiles = await Promise.all(
-    files.map((file) => eslint.isPathIgored(file)),
+    files.map((file) => eslint.isPathIgnored(file)),
   );
   const filteredFiles = files.filter((_, i) => !ignoredFiles[i]);
   return filteredFiles.join(" ");
@@ -11,8 +11,7 @@ const removeIgoredFiles = async (files) => {
 
 module.exports = {
   "*": async (files) => {
-    const filesToLint = await removeIgoredFiles(files);
-
+    const filesToLint = await removeIgnoredFiles(files);
     return [`eslint ${filesToLint} --max-warnings=0`];
   },
 };
