@@ -1,7 +1,7 @@
 {
   "name": "@hy-form/utils",
   "version": "1.0.0",
-  "description": "",
+  "description": "一些工具函数",
   "main": "./lib/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,5 +9,5 @@
   },
   "keywords": [],
   "author": "Jsweet",
-  "license": "ISC"
+  "license": "MIT"
 }

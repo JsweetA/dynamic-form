@@ -1,7 +1,7 @@
 {
   "name": "@hy-form/arco",
   "version": "1.0.3",
-  "description": "",
+  "description": "配置表单，用于配置文件一键生产表单",
   "main": "./dist/Hy-form.umd.js",
   "module": "./dist/Hy-form.mjs",
   "scripts": {
