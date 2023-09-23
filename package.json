@@ -10,7 +10,7 @@
     "lint-fix": "eslint --fix ./ --ext **/*.{js,jsx,tsx,ts,less,json,vue} --max-warnings=0",
     "format": "prettier --write **/*.{js,jsx,tsx,ts,less,json,vue}",
     "format-watch": "onchange -d 1000 **/*.{js,jsx,tsx,ts,less,json,vue} -- prettier --config .prettierrc --write {{changed}}",
-    "cz": "cz",
+    "commit": "git add -A && cz",
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve:demo-vue3": "cd ./demo/vue3 && pnpm serve",
     "serve:arco-dev": "cd ./packages/arco && vite",
@@ -24,6 +24,11 @@
   "keywords": [],
   "author": "",
   "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
     "@commitlint/cli": "^17.7.1",
