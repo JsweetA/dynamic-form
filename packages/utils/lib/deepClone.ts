@@ -1,5 +1,5 @@
 export function getType(a: any) {
-  let type = typeof a;
+  const type = typeof a;
   if (type != "object") return type;
 
   return Object.prototype.toString.call(a).split(" ")[1].replace("]", "");
@@ -14,9 +14,9 @@ export default function cloneDeep(target: any, hash = new WeakMap()) {
   if (hash.get(target)) return hash.get(target);
 
   // 如果是数组就给数组，反之就给对象
-  let newObj = Array.isArray(target) ? [] : ({} as any);
+  const newObj = Array.isArray(target) ? [] : ({} as any);
   hash.set(target, newObj);
-  for (let key in target) {
+  for (const key in target) {
     if (isObject(target[key])) {
       newObj[key] = cloneDeep(target[key], hash);
     } else {

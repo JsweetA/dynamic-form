@@ -4,7 +4,7 @@
  */
 export default function props(item: any = {}) {
   const obj: any = {};
-  for (let i in item) {
+  for (const i in item) {
     if (i !== "type") {
       obj[i] = item[i];
     }

@@ -4,7 +4,7 @@
  */
 export default function event(item: any = {}) {
   const obj: any = {};
-  for (let i in item) {
+  for (const i in item) {
     if (typeof item[i] === "function") {
       obj[i] = item[i];
     }
