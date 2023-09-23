@@ -5,6 +5,7 @@
   "main": "dist/Hy-form.mjs",
   "module": "dist/Hy-form.umd.js",
   "scripts": {
+    "prepare": "husky install",
     "lint": "eslint ./ --ext **/*.{js,jsx,tsx,ts,less,json,vue} --max-warnings=0",
     "lint-fix": "eslint --fix ./ --ext **/*.{js,jsx,tsx,ts,less,json,vue} --max-warnings=0",
     "format": "prettier --write **/*.{js,jsx,tsx,ts,less,json,vue}",
@@ -28,6 +29,9 @@
     "@typescript-eslint/parser": "^6.7.2",
     "commitizen": "^4.3.0",
     "eslint": "^8.50.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "husky": "^8.0.3",
     "prettier": "^3.0.3"
   }
 }
