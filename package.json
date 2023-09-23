@@ -1,24 +1,31 @@
 {
-	"name": "hy-form",
-	"version": "1.0.0",
-	"description": "",
-	"main": "dist/Hy-form.mjs",
-	"module": "dist/Hy-form.umd.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"serve:demo-vue3": "cd ./demo/vue3 && pnpm serve",
-		"serve:arco-dev": "cd ./packages/arco && vite",
-		"mp": "cd ./examples/uniapp-demo && pnpm mp",
-		"build:arco": "cd ./packages/arco && pnpm build"
-	},
-	"bugs": {
-		"url": "https://github.com/JsweetA/hy-form/issues"
-	},
-	"homepage": "https://github.com/JsweetA/hy-form#readme",
-	"keywords": [],
-	"author": "",
-	"license": "MIT",
-	"devDependencies": {
-		"@changesets/cli": "^2.26.2"
-	}
+  "name": "hy-form",
+  "version": "1.0.1",
+  "description": "",
+  "main": "dist/Hy-form.mjs",
+  "module": "dist/Hy-form.umd.js",
+  "scripts": {
+    "lint": "eslint ./ --ext **/*.{js,jsx,tsx,ts,less,json,vue} --max-warnings=0",
+    "format": "prettier --write **/*.{js,jsx,tsx,ts,less,json,vue}",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve:demo-vue3": "cd ./demo/vue3 && pnpm serve",
+    "serve:arco-dev": "cd ./packages/arco && vite",
+    "mp": "cd ./examples/uniapp-demo && pnpm mp",
+    "build:arco": "cd ./packages/arco && pnpm build"
+  },
+  "bugs": {
+    "url": "https://github.com/JsweetA/hy-form/issues"
+  },
+  "homepage": "https://github.com/JsweetA/hy-form#readme",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@changesets/cli": "^2.26.2",
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
+    "commitizen": "^4.3.0",
+    "eslint": "^8.50.0",
+    "prettier": "^3.0.3"
+  }
 }

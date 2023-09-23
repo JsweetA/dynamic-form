@@ -1,44 +1,44 @@
 {
-	"name": "@hy-form/arco",
-	"version": "1.0.2",
-	"description": "",
-	"main": "./dist/Hy-form.umd.js",
-	"module": "./dist/Hy-form.mjs",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"serve:web": "vite",
-		"build": "vue-tsc && vite build"
-	},
-	"files": [
-		"README.md",
-		"package.json",
-		"LICENSE",
-		"src",
-		"types",
-		"dist",
-		"example"
-	],
-	"keywords": [],
-	"author": "Jsweet",
-	"dependencies": {
-		"vue": "^3.3.4"
-	},
-	"publishConfig": {
-		"access": "public",
-		"registry": "https://registry.npmjs.org/"
-	},
-	"devDependencies": {
-		"@arco-design/web-vue": "^2.51.1",
-		"@arco-plugins/vite-vue": "^1.4.5",
-		"@hy-form/components": "workspace:^",
-		"@hy-form/utils": "workspace:^",
-		"@vitejs/plugin-vue": "^4.1.0",
-		"@vitejs/plugin-vue-jsx": "^3.0.1",
-		"sass": "^1.66.1",
-		"unplugin-auto-import": "^0.16.6",
-		"unplugin-vue-components": "^0.25.2",
-		"vite": "^4.4.9",
-		"vue-tsc": "^1.8.10"
-	},
-	"license": "MIT"
+  "name": "@hy-form/arco",
+  "version": "1.0.3",
+  "description": "",
+  "main": "./dist/Hy-form.umd.js",
+  "module": "./dist/Hy-form.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve:web": "vite",
+    "build": "vue-tsc && vite build"
+  },
+  "files": [
+    "README.md",
+    "package.json",
+    "LICENSE",
+    "src",
+    "types",
+    "dist",
+    "example"
+  ],
+  "keywords": [],
+  "author": "Jsweet",
+  "dependencies": {
+    "vue": "^3.3.4"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@arco-design/web-vue": "^2.51.1",
+    "@arco-plugins/vite-vue": "^1.4.5",
+    "@hy-form/components": "workspace:^",
+    "@hy-form/utils": "workspace:^",
+    "@vitejs/plugin-vue": "^4.1.0",
+    "@vitejs/plugin-vue-jsx": "^3.0.1",
+    "sass": "^1.66.1",
+    "unplugin-auto-import": "^0.16.6",
+    "unplugin-vue-components": "^0.25.2",
+    "vite": "^4.4.9",
+    "vue-tsc": "^1.8.10"
+  },
+  "license": "MIT"
 }
