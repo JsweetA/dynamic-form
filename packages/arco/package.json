@@ -34,6 +34,7 @@
     "@hy-form/utils": "workspace:^",
     "@vitejs/plugin-vue": "^4.1.0",
     "@vitejs/plugin-vue-jsx": "^3.0.1",
+    "rollup-plugin-visualizer": "^5.9.2",
     "sass": "^1.66.1",
     "unplugin-auto-import": "^0.16.6",
     "unplugin-vue-components": "^0.25.2",

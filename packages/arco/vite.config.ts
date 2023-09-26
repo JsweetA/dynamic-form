@@ -6,6 +6,7 @@ import Components from "unplugin-vue-components/vite";
 import { ArcoResolver } from "unplugin-vue-components/resolvers";
 import { vitePluginForArco } from "@arco-plugins/vite-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
+import { visualizer } from "rollup-plugin-visualizer";
 
 export default defineConfig({
   resolve: {
@@ -15,6 +16,7 @@ export default defineConfig({
     },
   },
   plugins: [
+    visualizer(),
     vue(),
     vueJsx(),
     AutoImport({
@@ -32,6 +34,7 @@ export default defineConfig({
     }),
   ],
   build: {
+    // minify: "terser",
     lib: {
       // Could also be a dictionary or array of multiple entry points
       entry: resolve(__dirname, "./src/index.ts"),
