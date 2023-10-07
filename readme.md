@@ -1,21 +1,20 @@
 #### 当前任务
 
-学习package.json中dependencies和devDependencies
+学习rollup.js
 
 #### 待完成任务
 
-- [+] 增加eslint规则
 - [ ] 兼容naiveui
 - [ ] 兼容tmui
 - [ ] 打包优化
 
 #### 各个工具的作用
 
-+ eslint：用于检查代码规范，不规范则进行报错，可自行配置添加规则
-+ prettier：用于格式化代码，建立统一的代码风格
-+ onchange：用于辅助prettier，从而实现自动格式化代码的功能，也就是Alt + Shift + F
-+ husky：用于创建git hooks，比如创建一个pre-commit hook，在提交代码前利用hook进行检查代码规范，若不符合则直接终止
-+ lint-staged：仅对变更的文件执行相关操作，也就是针对变更文件执行eslint检查
+- eslint：用于检查代码规范，不规范则进行报错，可自行配置添加规则
+- prettier：用于格式化代码，建立统一的代码风格
+- onchange：用于辅助prettier，从而实现自动格式化代码的功能，也就是Alt + Shift + F
+- husky：用于创建git hooks，比如创建一个pre-commit hook，在提交代码前利用hook进行检查代码规范，若不符合则直接终止
+- lint-staged：仅对变更的文件执行相关操作，也就是针对变更文件执行eslint检查
 
 #### 工程化工具文档链接
 
