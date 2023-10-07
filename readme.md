@@ -1,6 +1,6 @@
 #### 当前任务
 
-学习rollup.js
+学习rollup.js的命令行接口以及各种模块化比如 esm，cjs，umd这些
 
 #### 待完成任务
 

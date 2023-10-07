@@ -15,10 +15,12 @@ export default {
       file: "./dist/bundle.js",
       format: "cjs",
     },
-    {
-      file: "./dist/bundle.es.js",
-      format: "es",
-    },
+    // {
+    //   file: "./dist/bundle.es.js",
+    //   chunkFileNames: "[name]-[hash].js",
+    //   entryFileNames: "[name]-[hash].js",
+    //   format: "es",
+    // },
     {
       file: "./dist/bundle.umd.js",
       name: "utils",
@@ -34,9 +36,5 @@ export default {
 
   // 使用的插件
   // 注意，这里的插件使用是有顺序的，先把ts编译为js，然后查找依赖，最后压缩
-  plugins: [
-    typescript({ tsconfig: "../../tsconfig.json" }),
-    commonjs(),
-    terser(),
-  ],
+  plugins: [typescript({}), commonjs(), terser()],
 };
