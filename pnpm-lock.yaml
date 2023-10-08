@@ -56,11 +56,11 @@ importers:
         specifier: ^3.3.4
         version: 3.3.4
     devDependencies:
-      '@monorepo/arco':
-        specifier: ^1.0.0
+      '@monorepo/form_arco':
+        specifier: workspace:^
         version: link:../../packages/form_arco
       '@monorepo/utils':
-        specifier: ^1.0.0
+        specifier: workspace:^
         version: link:../../packages/utils
       '@vitejs/plugin-vue':
         specifier: ^4.2.3

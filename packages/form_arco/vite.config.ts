@@ -8,7 +8,6 @@ import { vitePluginForArco } from "@arco-plugins/vite-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import { visualizer } from "rollup-plugin-visualizer";
 import terser from "@rollup/plugin-terser";
-import commonjs from "@rollup/plugin-commonjs";
 
 export default defineConfig({
   resolve: {
@@ -49,20 +48,32 @@ export default defineConfig({
       external: ["vue"],
       output: [
         {
-          file: "./dist/form_arco.cjs",
+          dir: "./dist",
           format: "cjs",
+          entryFileNames: "form_arco.cjs",
+          globals: {
+            vue: "Vue",
+          },
         },
         {
-          file: "./dist/form_arco.umd.js",
+          dir: "./dist",
           name: "form_arco",
           format: "umd",
+          entryFileNames: "form_arco.umd.js",
+          globals: {
+            vue: "Vue",
+          },
         },
         {
-          file: "./dist/form_arco.es.js",
+          dir: "./dist",
           format: "es",
+          entryFileNames: "form_arco.mjs",
+          globals: {
+            vue: "Vue",
+          },
         },
       ],
-      plugins: [commonjs(), terser()],
+      plugins: [terser()],
     },
   },
   css: {

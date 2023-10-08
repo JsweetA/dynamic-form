@@ -12,8 +12,8 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
-    "@monorepo/arco": "^1.0.0",
-    "@monorepo/utils": "^1.0.0",
+    "@monorepo/form_arco": "workspace:^",
+    "@monorepo/utils": "workspace:^",
     "@vitejs/plugin-vue": "^4.2.3",
     "vite": "^4.4.5"
   }
