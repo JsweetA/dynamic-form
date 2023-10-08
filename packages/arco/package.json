@@ -1,5 +1,5 @@
 {
-  "name": "@hy-form/arco",
+  "name": "@monorepo/arco",
   "version": "1.0.3",
   "description": "配置表单，用于配置文件一键生产表单",
   "main": "./dist/Hy-form.umd.js",
@@ -19,7 +19,7 @@
     "example"
   ],
   "keywords": [],
-  "author": "Jsweet",
+  "author": "monorepo",
   "dependencies": {
     "vue": "^3.3.4"
   },
@@ -30,8 +30,8 @@
   "devDependencies": {
     "@arco-design/web-vue": "^2.51.1",
     "@arco-plugins/vite-vue": "^1.4.5",
-    "@hy-form/components": "workspace:^",
-    "@hy-form/utils": "workspace:^",
+    "@monorepo/components": "workspace:^",
+    "@monorepo/utils": "workspace:^",
     "@rollup/plugin-commonjs": "^25.0.4",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.5",

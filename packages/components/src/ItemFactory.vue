@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import { parseEvent, parseProps, getPlaceholder } from "@hy-form/utils";
+import { parseEvent, parseProps, getPlaceholder } from "@monorepo/utils";
 
 defineProps({
   type: null, // 类型

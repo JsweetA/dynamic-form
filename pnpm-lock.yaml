@@ -56,10 +56,10 @@ importers:
         specifier: ^3.3.4
         version: 3.3.4
     devDependencies:
-      '@hy-form/arco':
+      '@monorepo/arco':
         specifier: ^1.0.0
         version: link:../../packages/arco
-      '@hy-form/utils':
+      '@monorepo/utils':
         specifier: ^1.0.0
         version: link:../../packages/utils
       '@vitejs/plugin-vue':
@@ -81,10 +81,10 @@ importers:
       '@arco-plugins/vite-vue':
         specifier: ^1.4.5
         version: 1.4.5
-      '@hy-form/components':
+      '@monorepo/components':
         specifier: workspace:^
         version: link:../components
-      '@hy-form/utils':
+      '@monorepo/utils':
         specifier: workspace:^
         version: link:../utils
       '@rollup/plugin-commonjs':
@@ -123,7 +123,7 @@ importers:
 
   packages/components:
     dependencies:
-      '@hy-form/utils':
+      '@monorepo/utils':
         specifier: workspace:^
         version: link:../utils
       vue:

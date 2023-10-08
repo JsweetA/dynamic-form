@@ -12,7 +12,7 @@
 
 <script setup>
 import { computed, ref } from "vue";
-import { deepClone } from "@hy-form/utils";
+import { deepClone } from "@monorepo/utils";
 
 const form = ref();
 const formConfig = [

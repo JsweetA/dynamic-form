@@ -27,9 +27,9 @@
 
 <script setup lang="ts">
 import { watch, ref, useSlots, computed } from "vue";
-import { ItemFactory } from "@hy-form/components";
+import { ItemFactory } from "@monorepo/components";
 import { componentMap } from "./components";
-import { deepClone } from "@hy-form/utils";
+import { deepClone } from "@monorepo/utils";
 
 const slots = useSlots();
 const props = defineProps({

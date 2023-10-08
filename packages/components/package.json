@@ -1,5 +1,5 @@
 {
-  "name": "@hy-form/components",
+  "name": "@monorepo/components",
   "version": "1.0.1",
   "description": "存放一些通用的组件",
   "main": "index.js",
@@ -7,10 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Jsweet",
+  "author": "monorepo",
   "license": "ISC",
   "dependencies": {
-    "@hy-form/utils": "workspace:^",
+    "@monorepo/utils": "workspace:^",
     "vue": "^3.3.4"
   }
 }

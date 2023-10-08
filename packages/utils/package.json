@@ -1,5 +1,5 @@
 {
-  "name": "@hy-form/utils",
+  "name": "@monorepo/utils",
   "version": "1.0.2",
   "description": "一些工具函数",
   "type": "module",
@@ -15,7 +15,7 @@
     "package.json"
   ],
   "keywords": [],
-  "author": "Jsweet",
+  "author": "monorepo",
   "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.4",

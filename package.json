@@ -1,5 +1,5 @@
 {
-  "name": "hy-form",
+  "name": "monorepo",
   "version": "1.0.1",
   "description": "",
   "main": "dist/Hy-form.mjs",
@@ -18,9 +18,9 @@
     "build:arco": "cd ./packages/arco && pnpm build"
   },
   "bugs": {
-    "url": "https://github.com/JsweetA/hy-form/issues"
+    "url": "https://github.com/monorepoA/monorepo/issues"
   },
-  "homepage": "https://github.com/JsweetA/hy-form#readme",
+  "homepage": "https://github.com/monorepoA/monorepo#readme",
   "keywords": [],
   "author": "",
   "license": "MIT",
