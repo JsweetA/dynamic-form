@@ -13,6 +13,7 @@ module.exports = {
       2,
       "always",
       [
+        "study",
         "feat",
         "fix",
         "docs",
@@ -58,6 +59,11 @@ module.exports = {
       confirmCommit: "是否提交或修改commit ?",
     },
     types: [
+      {
+        value: "study",
+        name: "study:    📚  A new stduy",
+        emoji: "📚",
+      },
       {
         value: "feat",
         name: "feat:     🚀  A new feature",

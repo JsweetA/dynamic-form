@@ -8,7 +8,7 @@
   ></component>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { parseEvent, parseProps, getPlaceholder } from "@hy-form/utils";
 
 defineProps({

@@ -2,7 +2,7 @@
   "name": "@hy-form/components",
   "version": "1.0.1",
   "description": "存放一些通用的组件",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

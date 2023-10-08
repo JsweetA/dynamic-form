@@ -7,6 +7,8 @@ import { ArcoResolver } from "unplugin-vue-components/resolvers";
 import { vitePluginForArco } from "@arco-plugins/vite-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import { visualizer } from "rollup-plugin-visualizer";
+import terser from "@rollup/plugin-terser";
+import commonjs from "@rollup/plugin-commonjs";
 
 export default defineConfig({
   resolve: {
@@ -51,6 +53,7 @@ export default defineConfig({
           vue: "Vue",
         },
       },
+      plugins: [commonjs(), terser()],
     },
   },
   css: {

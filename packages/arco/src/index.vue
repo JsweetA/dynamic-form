@@ -28,8 +28,8 @@
 <script setup lang="ts">
 import { watch, ref, useSlots, computed } from "vue";
 import { ItemFactory } from "@hy-form/components";
-import { deepClone } from "@hy-form/utils";
 import { componentMap } from "./components";
+import { deepClone } from "@hy-form/utils";
 
 const slots = useSlots();
 const props = defineProps({

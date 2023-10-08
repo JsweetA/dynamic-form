@@ -87,6 +87,15 @@ importers:
       '@hy-form/utils':
         specifier: workspace:^
         version: link:../utils
+      '@rollup/plugin-commonjs':
+        specifier: ^25.0.4
+        version: 25.0.4(rollup@3.29.3)
+      '@rollup/plugin-terser':
+        specifier: ^0.4.4
+        version: 0.4.4(rollup@3.29.3)
+      '@rollup/plugin-typescript':
+        specifier: ^11.1.5
+        version: 11.1.5(rollup@3.29.3)(tslib@2.6.2)(typescript@5.2.2)
       '@vitejs/plugin-vue':
         specifier: ^4.1.0
         version: 4.2.3(vite@4.4.9)(vue@3.3.4)
@@ -126,6 +135,12 @@ importers:
       '@rollup/plugin-commonjs':
         specifier: ^25.0.4
         version: 25.0.4(rollup@3.29.3)
+      '@rollup/plugin-terser':
+        specifier: ^0.4.4
+        version: 0.4.4(rollup@3.29.3)
+      '@rollup/plugin-typescript':
+        specifier: ^11.1.5
+        version: 11.1.5(rollup@3.29.3)(tslib@2.6.2)(typescript@5.2.2)
       '@types/node':
         specifier: ^20.8.3
         version: 20.8.3
@@ -135,12 +150,12 @@ importers:
       rollup:
         specifier: ^3.29.3
         version: 3.29.3
-      rollup-plugin-terser:
-        specifier: ^7.0.2
-        version: 7.0.2(rollup@3.29.3)
       rollup-plugin-typescript:
         specifier: ^1.0.1
         version: 1.0.1(tslib@2.6.2)(typescript@5.2.2)
+      rollup-plugin-typescript2:
+        specifier: ^0.36.0
+        version: 0.36.0(rollup@3.29.3)(typescript@5.2.2)
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -1243,6 +1258,49 @@ packages:
       is-reference: 1.2.1
       magic-string: 0.27.0
       rollup: 3.29.3
+    dev: true
+
+  /@rollup/plugin-terser@0.4.4(rollup@3.29.3):
+    resolution: {integrity: sha512-XHeJC5Bgvs8LfukDwWZp7yeqin6ns8RTl2B9avbejt6tZqsqvVoWI7ZTQrcNsfKEDWBTnTxM8nMDkO2IFFbd0A==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^2.0.0||^3.0.0||^4.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      rollup: 3.29.3
+      serialize-javascript: 6.0.1
+      smob: 1.4.1
+      terser: 5.20.0
+    dev: true
+
+  /@rollup/plugin-typescript@11.1.5(rollup@3.29.3)(tslib@2.6.2)(typescript@5.2.2):
+    resolution: {integrity: sha512-rnMHrGBB0IUEv69Q8/JGRD/n4/n6b3nfpufUu26axhUcboUzv/twfZU8fIBbTOphRAe0v8EyxzeDpKXqGHfyDA==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^2.14.0||^3.0.0||^4.0.0
+      tslib: '*'
+      typescript: '>=3.7.0'
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+      tslib:
+        optional: true
+    dependencies:
+      '@rollup/pluginutils': 5.0.4(rollup@3.29.3)
+      resolve: 1.22.6
+      rollup: 3.29.3
+      tslib: 2.6.2
+      typescript: 5.2.2
+    dev: true
+
+  /@rollup/pluginutils@4.2.1:
+    resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
+    engines: {node: '>= 8.0.0'}
+    dependencies:
+      estree-walker: 2.0.2
+      picomatch: 2.3.1
     dev: true
 
   /@rollup/pluginutils@5.0.4(rollup@3.29.3):
@@ -2779,6 +2837,15 @@ packages:
       to-regex-range: 5.0.1
     dev: true
 
+  /find-cache-dir@3.3.2:
+    resolution: {integrity: sha512-wXZV5emFEjrridIgED11OoUKLxiYjAcqot/NJdAkOhlJ+vGzwhOAfcG5OX1jP+S0PcjEn8bdMJv+g2jwQ3Onig==}
+    engines: {node: '>=8'}
+    dependencies:
+      commondir: 1.0.1
+      make-dir: 3.1.0
+      pkg-dir: 4.2.0
+    dev: true
+
   /find-node-modules@2.1.3:
     resolution: {integrity: sha512-UC2I2+nx1ZuOBclWVNdcnbDR5dlrOdVb7xNjmT/lHE+LsgztWks3dG7boJ37yTS/venXw84B/mAW9uHVoC5QRg==}
     dependencies:
@@ -2848,6 +2915,15 @@ packages:
     dependencies:
       cross-spawn: 7.0.3
       signal-exit: 4.1.0
+    dev: true
+
+  /fs-extra@10.1.0:
+    resolution: {integrity: sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==}
+    engines: {node: '>=12'}
+    dependencies:
+      graceful-fs: 4.2.11
+      jsonfile: 6.1.0
+      universalify: 2.0.0
     dev: true
 
   /fs-extra@11.1.1:
@@ -3515,15 +3591,6 @@ packages:
       '@pkgjs/parseargs': 0.11.0
     dev: true
 
-  /jest-worker@26.6.2:
-    resolution: {integrity: sha512-KWYVV1c4i+jbMpaBC+U++4Va0cp8OisU185o73T1vo99hqi7w8tSJfUXYswwqqrjzwxa6KpRK54WhPvwf5w6PQ==}
-    engines: {node: '>= 10.13.0'}
-    dependencies:
-      '@types/node': 20.8.3
-      merge-stream: 2.0.0
-      supports-color: 7.2.0
-    dev: true
-
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
     dev: true
@@ -3806,6 +3873,13 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
+
+  /make-dir@3.1.0:
+    resolution: {integrity: sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw==}
+    engines: {node: '>=8'}
+    dependencies:
+      semver: 6.3.1
+    dev: true
 
   /make-error@1.3.6:
     resolution: {integrity: sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==}
@@ -4483,17 +4557,19 @@ packages:
       glob: 10.3.10
     dev: true
 
-  /rollup-plugin-terser@7.0.2(rollup@3.29.3):
-    resolution: {integrity: sha512-w3iIaU4OxcF52UUXiZNsNeuXIMDvFrr+ZXK6bFZ0Q60qyVfq4uLptoS4bbq3paG3x216eQllFZX7zt6TIImguQ==}
-    deprecated: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-terser
+  /rollup-plugin-typescript2@0.36.0(rollup@3.29.3)(typescript@5.2.2):
+    resolution: {integrity: sha512-NB2CSQDxSe9+Oe2ahZbf+B4bh7pHwjV5L+RSYpCu7Q5ROuN94F9b6ioWwKfz3ueL3KTtmX4o2MUH2cgHDIEUsw==}
     peerDependencies:
-      rollup: ^2.0.0
+      rollup: '>=1.26.3'
+      typescript: '>=2.4.0'
     dependencies:
-      '@babel/code-frame': 7.22.13
-      jest-worker: 26.6.2
+      '@rollup/pluginutils': 4.2.1
+      find-cache-dir: 3.3.2
+      fs-extra: 10.1.0
       rollup: 3.29.3
-      serialize-javascript: 4.0.0
-      terser: 5.20.0
+      semver: 7.5.4
+      tslib: 2.6.2
+      typescript: 5.2.2
     dev: true
 
   /rollup-plugin-typescript@1.0.1(tslib@2.6.2)(typescript@5.2.2):
@@ -4627,8 +4703,8 @@ packages:
       lru-cache: 6.0.0
     dev: true
 
-  /serialize-javascript@4.0.0:
-    resolution: {integrity: sha512-GaNA54380uFefWghODBWEGisLZFj00nS5ACs6yHa9nLqlLpVLO8ChDGeKRjZnV4Nh4n0Qi7nhYZD/9fCPzEqkw==}
+  /serialize-javascript@6.0.1:
+    resolution: {integrity: sha512-owoXEFjWRllis8/M1Q+Cw5k8ZH40e3zhp/ovX+Xr/vi1qj6QesbyXXViFbpNvWvPNAD62SutwEXavefrLJWj7w==}
     dependencies:
       randombytes: 2.1.0
     dev: true
@@ -4717,6 +4793,10 @@ packages:
       strip-ansi: 6.0.1
       wcwidth: 1.0.1
       yargs: 15.4.1
+    dev: true
+
+  /smob@1.4.1:
+    resolution: {integrity: sha512-9LK+E7Hv5R9u4g4C3p+jjLstaLe11MDsL21UpYaCNmapvMkYhqCV4A/f/3gyH8QjMyh6l68q9xC85vihY9ahMQ==}
     dev: true
 
   /source-map-js@1.0.2:
