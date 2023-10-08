@@ -1,7 +1,7 @@
 {
   "name": "@monorepo/arco",
   "version": "1.0.3",
-  "description": "配置表单，用于配置文件一键生产表单",
+  "description": "动态表单，arco组件库",
   "main": "./dist/Hy-form.umd.js",
   "module": "./dist/Hy-form.mjs",
   "scripts": {
