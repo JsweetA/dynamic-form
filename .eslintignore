@@ -5,3 +5,5 @@ pnpm-lock.yaml
 dist
 
 *.md
+
+*.html

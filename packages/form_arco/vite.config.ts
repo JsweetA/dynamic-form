@@ -6,8 +6,9 @@ import Components from "unplugin-vue-components/vite";
 import { ArcoResolver } from "unplugin-vue-components/resolvers";
 import { vitePluginForArco } from "@arco-plugins/vite-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
-import { visualizer } from "rollup-plugin-visualizer";
 import terser from "@rollup/plugin-terser";
+// 可视化工具
+// import { visualizer } from "rollup-plugin-visualizer";
 
 export default defineConfig({
   resolve: {
@@ -17,7 +18,7 @@ export default defineConfig({
     },
   },
   plugins: [
-    visualizer(),
+    // visualizer(),
     vue(),
     vueJsx(),
     AutoImport({
@@ -35,7 +36,8 @@ export default defineConfig({
     }),
   ],
   build: {
-    // minify: "terser",
+    minify: "terser",
+    // manifest: true,
     lib: {
       // Could also be a dictionary or array of multiple entry points
       entry: resolve(__dirname, "./src/index.ts"),
@@ -43,17 +45,26 @@ export default defineConfig({
       // the proper extensions will be added
       fileName: "form_arco",
     },
+    chunkSizeWarningLimit: 5000, // chunk大小超过5000kb警告
+    // [https://terser.org/docs/api-reference#minify-options]
+    terserOptions: {
+      compress: {
+        drop_console: false, // 自动移除console
+        pure_funcs: ["console.log", "console.info", "console.warn"], // 移除以上console
+        drop_debugger: true, // 删除debugger语句
+      },
+    },
+    assetsInlineLimit: 4096, // 小于这个的资源将自动base64
+    assetsDir: "statics/assets", // 指定生成静态资源的存放路径
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖
       external: ["vue"],
+
       output: [
         {
           dir: "./dist",
           format: "cjs",
           entryFileNames: "form_arco.cjs",
-          globals: {
-            vue: "Vue",
-          },
         },
         {
           dir: "./dist",
@@ -68,10 +79,17 @@ export default defineConfig({
           dir: "./dist",
           format: "es",
           entryFileNames: "form_arco.mjs",
-          globals: {
-            vue: "Vue",
-          },
         },
+        // {
+        //   dir: "./chunk",
+        //   name: "form_arco",
+        //   format: "umd",
+        //   chunkFileNames: "static/js/[name].js",
+        //   entryFileNames: "static/js/[name].js",
+        //   globals: {
+        //     vue: "Vue",
+        //   },
+        // },
       ],
       plugins: [terser()],
     },
