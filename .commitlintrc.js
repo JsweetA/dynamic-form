@@ -60,14 +60,14 @@ module.exports = {
     },
     types: [
       {
-        value: "study",
-        name: "study:    📚  A new stduy",
-        emoji: "📚",
-      },
-      {
         value: "feat",
         name: "feat:     🚀  A new feature",
         emoji: "🚀",
+      },
+      {
+        value: "study",
+        name: "study:    📚  A new stduy",
+        emoji: "📚",
       },
       {
         value: "fix",

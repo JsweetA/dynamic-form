@@ -10,3 +10,7 @@ interface ImportMetaEnv {
 declare global {
   import "@arco-design/web-vue/es/components";
 }
+
+declare module "@monorepo/utils";
+declare module "@monorepo/components";
+declare module "@rollup/plugin-terser";

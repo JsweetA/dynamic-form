@@ -1,9 +1,9 @@
 {
-  "name": "@monorepo/arco",
+  "name": "@monorepo/form_arco",
   "version": "1.0.3",
   "description": "动态表单，arco组件库",
-  "main": "./dist/Hy-form.umd.js",
-  "module": "./dist/Hy-form.mjs",
+  "main": "./dist/form_arco.umd.js",
+  "module": "./dist/form_arco.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve:web": "vite",
@@ -14,9 +14,7 @@
     "package.json",
     "LICENSE",
     "src",
-    "types",
-    "dist",
-    "example"
+    "dist"
   ],
   "keywords": [],
   "author": "monorepo",

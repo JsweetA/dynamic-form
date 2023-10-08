@@ -13,9 +13,9 @@
     "commit": "git add -A && cz && git push",
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve:demo-vue3": "cd ./demo/vue3 && pnpm serve",
-    "serve:arco-dev": "cd ./packages/arco && vite",
+    "serve:arco-dev": "cd ./packages/form_arco && vite",
     "mp": "cd ./examples/uniapp-demo && pnpm mp",
-    "build:arco": "cd ./packages/arco && pnpm build"
+    "build:arco": "cd ./packages/form_arco && pnpm build"
   },
   "bugs": {
     "url": "https://github.com/monorepoA/monorepo/issues"

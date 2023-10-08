@@ -40,19 +40,28 @@ export default defineConfig({
     lib: {
       // Could also be a dictionary or array of multiple entry points
       entry: resolve(__dirname, "./src/index.ts"),
-      name: "Hy-form",
+      name: "form_arco",
       // the proper extensions will be added
-      fileName: "Hy-form",
+      fileName: "form_arco",
     },
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖
       external: ["vue"],
-      output: {
-        // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
-        globals: {
-          vue: "Vue",
+      output: [
+        {
+          file: "./dist/form_arco.cjs",
+          format: "cjs",
         },
-      },
+        {
+          file: "./dist/form_arco.umd.js",
+          name: "form_arco",
+          format: "umd",
+        },
+        {
+          file: "./dist/form_arco.es.js",
+          format: "es",
+        },
+      ],
       plugins: [commonjs(), terser()],
     },
   },

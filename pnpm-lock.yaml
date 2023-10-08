@@ -58,7 +58,7 @@ importers:
     devDependencies:
       '@monorepo/arco':
         specifier: ^1.0.0
-        version: link:../../packages/arco
+        version: link:../../packages/form_arco
       '@monorepo/utils':
         specifier: ^1.0.0
         version: link:../../packages/utils
@@ -69,7 +69,7 @@ importers:
         specifier: ^4.4.5
         version: 4.4.9(@types/node@20.4.7)(sass@1.66.1)(terser@5.20.0)
 
-  packages/arco:
+  packages/form_arco:
     dependencies:
       vue:
         specifier: ^3.3.4
@@ -83,7 +83,7 @@ importers:
         version: 1.4.5
       '@monorepo/components':
         specifier: workspace:^
-        version: link:../components
+        version: link:../form_component
       '@monorepo/utils':
         specifier: workspace:^
         version: link:../utils
@@ -121,7 +121,7 @@ importers:
         specifier: ^1.8.10
         version: 1.8.10(typescript@5.2.2)
 
-  packages/components:
+  packages/form_component:
     dependencies:
       '@monorepo/utils':
         specifier: workspace:^
