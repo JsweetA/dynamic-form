@@ -26,6 +26,7 @@
 </template>
 
 <script setup lang="ts">
+// import "../vite-env";
 import { watch, ref, useSlots, computed } from "vue";
 import { ItemFactory } from "@monorepo/components";
 import { componentMap } from "./components";
