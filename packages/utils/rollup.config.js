@@ -29,12 +29,12 @@ const config = {
       chunkFileNames: "[name]-[hash].js",
       entryFileNames: "bundle.js",
       format: "es",
-      manualChunks(id, { getModuleInfo }) {
-        return id.replace(
-          "F:\\frontDesign\\个人学习\\hy-form\\packages\\utils\\src\\",
-          "",
-        );
-      },
+      // manualChunks(id, { getModuleInfo }) {
+      //   return id.replace(
+      //     "F:\\frontDesign\\个人学习\\hy-form\\packages\\utils\\src\\",
+      //     "",
+      //   );
+      // },
     },
     // {
     //   file: "./dist/bundle.min.js",
