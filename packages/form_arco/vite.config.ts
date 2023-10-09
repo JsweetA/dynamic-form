@@ -36,7 +36,7 @@ export default defineConfig({
     }),
   ],
   build: {
-    minify: "terser",
+    // minify: "terser",
     // manifest: true,
     lib: {
       // Could also be a dictionary or array of multiple entry points
@@ -80,16 +80,21 @@ export default defineConfig({
           format: "es",
           entryFileNames: "form_arco.mjs",
         },
-        // {
-        //   dir: "./chunk",
-        //   name: "form_arco",
-        //   format: "umd",
-        //   chunkFileNames: "static/js/[name].js",
-        //   entryFileNames: "static/js/[name].js",
-        //   globals: {
-        //     vue: "Vue",
-        //   },
-        // },
+        {
+          dir: "./chunk",
+          name: "form_arco",
+          format: "es",
+          chunkFileNames: "[name].js",
+          entryFileNames: "[name].js",
+          globals: {
+            vue: "Vue",
+          },
+          manualChunks: (id) => {
+            if (id.includes("node_modules")) {
+              return "vendor";
+            }
+          },
+        },
       ],
       plugins: [terser()],
     },
