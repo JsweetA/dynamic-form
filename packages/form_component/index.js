@@ -1,1 +1,1 @@
-export { default as ItemFactory } from "./src/itemFactory.vue";
+export { default as ItemFactory } from "./src/ItemFactory.vue";

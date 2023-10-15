@@ -1,4 +1,4 @@
-{
+module.exports = {
   // 限定在根目录下搜索
   "root": true,
   // 默认情况eslint内置的解析器是对于标准JavaScript运行时的版本兼容，而代码中有一些ts，需要将ts解析成eslint能识别的AST

@@ -19,16 +19,16 @@
   "keywords": [],
   "author": "monorepo",
   "dependencies": {
-    "vue": "^3.3.4"
+    "vue": "^3.3.4",
+    "@arco-design/web-vue": "^2.51.1",
+    "@monorepo/components": "workspace:^"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "@arco-design/web-vue": "^2.51.1",
     "@arco-plugins/vite-vue": "^1.4.5",
-    "@monorepo/components": "workspace:^",
     "@monorepo/utils": "workspace:^",
     "@rollup/plugin-commonjs": "^25.0.4",
     "@rollup/plugin-terser": "^0.4.4",

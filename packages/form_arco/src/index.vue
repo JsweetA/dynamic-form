@@ -1,38 +1,23 @@
 <template>
   <div>
-    <a-form ref="formRef" :model="fData" label-align="right" auto-label-width>
-      <a-form-item
-        class="formItem"
-        v-for="item of config"
-        v-bind="item"
-        :key="item?.field"
-      >
-        <ItemFactory
-          v-if="item?.type !== 'slot'"
-          :type="item?.type"
-          :item="item"
-          :data="fData"
-          :componentMap="componentMap"
-        />
-
-        <slot v-else :name="item?.name" :item="item"></slot>
-      </a-form-item>
-
-      <a-form-item v-if="slots.default">
-        <slot></slot>
-      </a-form-item>
-    </a-form>
+    <component :is="componentMap['Form']" ref="formRef" :model="fData">
+      <ItemFactory
+        :component-map="componentMap"
+        :form-item="componentMap['FormItem']"
+        :config="config"
+        :alias="alias"
+        :data="fData"
+      ></ItemFactory>
+    </component>
   </div>
 </template>
 
 <script setup lang="ts">
-// import "../vite-env";
-import { watch, ref, useSlots, computed } from "vue";
-import { ItemFactory } from "@monorepo/components";
-import { componentMap } from "./components";
+import { watch, ref, computed } from "vue";
+import alias, * as componentMap from "./config/index";
 import { deepClone } from "@monorepo/utils";
+import { ItemFactory } from "@monorepo/components";
 
-const slots = useSlots();
 const props = defineProps({
   config: {
     default: null,

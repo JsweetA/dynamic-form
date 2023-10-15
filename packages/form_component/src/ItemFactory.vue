@@ -1,21 +1,38 @@
 <template>
   <component
-    :is="componentMap[type]"
-    v-model="data[item?.field]"
-    v-bind="parseProps(item)"
-    v-on="parseEvent(item)"
-    :placeholder="getPlaceholder(item)"
-  ></component>
+    v-for="item of config"
+    v-bind="item"
+    :is="formItem"
+    :key="item?.field"
+  >
+    <component
+      v-if="item?.type !== 'slot'"
+      v-model="data[item?.field]"
+      v-bind="parseProps(item)"
+      v-on="parseEvent(item)"
+      :is="componentMap[alias[item?.type]]"
+      :placeholder="getPlaceholder(item)"
+    />
+
+    <slot v-else :name="item?.name" :item="item"></slot>
+    <!-- <component :is="componentMap[alias[item?.type]]" /> -->
+  </component>
+
+  <component :is="formItem" v-if="slots.default">
+    <slot></slot>
+  </component>
 </template>
 
 <script setup>
-import { parseEvent, parseProps, getPlaceholder } from "@monorepo/utils";
+import { parseEvent, parseProps, getPlaceholder } from "../utils";
+import { useSlots } from "vue";
 
-defineProps({
-  type: null, // 类型
-  item: null, // 配置项
+const slots = useSlots();
+const props = defineProps({
+  alias: null, // 别名
+  config: null, // 配置项
   data: null, // 双向绑定的数据（利用的引用类型数据逃离了数据单向的限制）
-  componentMap: null,
+  formItem: null, // formItem
+  componentMap: null, // 组件源
 });
-// 抽离type 由于直接绑定会把type也绑定上去，导致卡死
 </script>

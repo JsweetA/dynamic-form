@@ -47,13 +47,6 @@ export default defineConfig({
     },
     chunkSizeWarningLimit: 5000, // chunk大小超过5000kb警告
     // [https://terser.org/docs/api-reference#minify-options]
-    terserOptions: {
-      compress: {
-        drop_console: false, // 自动移除console
-        pure_funcs: ["console.log", "console.info", "console.warn"], // 移除以上console
-        drop_debugger: true, // 删除debugger语句
-      },
-    },
     assetsInlineLimit: 4096, // 小于这个的资源将自动base64
     assetsDir: "statics/assets", // 指定生成静态资源的存放路径
     rollupOptions: {
