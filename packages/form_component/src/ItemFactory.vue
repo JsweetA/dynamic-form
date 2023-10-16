@@ -18,21 +18,15 @@
     <!-- <component :is="componentMap[alias[item?.type]]" /> -->
   </component>
 
-  <component :is="formItem" v-if="slots.default">
+  <component :is="formItem" v-if="slots?.default">
     <slot></slot>
   </component>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { parseEvent, parseProps, getPlaceholder } from "../utils";
 import { useSlots } from "vue";
 
 const slots = useSlots();
-const props = defineProps({
-  alias: null, // 别名
-  config: null, // 配置项
-  data: null, // 双向绑定的数据（利用的引用类型数据逃离了数据单向的限制）
-  formItem: null, // formItem
-  componentMap: null, // 组件源
-});
+defineProps(["alias", "config", "componentMap", "formItem", "data"]);
 </script>

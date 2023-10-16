@@ -3,8 +3,8 @@
   "version": "1.0.2",
   "description": "一些工具函数",
   "type": "module",
-  "main": "./dist/bundle.umd.js",
-  "module": "./dist/bundle.es.js",
+  "main": "./src/index",
+  "module": "./src/index",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist",

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Hy-form class="form" ref="form" :config="formConfig"></Hy-form>
+    <Hy-form class="form" v-model="value" :config="formConfig"></Hy-form>
     <div class="value">
       {{ value }}
     </div>
@@ -75,7 +75,7 @@ const formConfig = [
   // },
 ];
 
-const value = computed(() => deepClone(form.value?.data));
+const value = ref();
 </script>
 
 <style scoped>

@@ -1,12 +1,12 @@
 <template>
   <div>
-    <component :is="componentMap['Form']" ref="formRef" :model="fData">
+    <component :is="componentMap['Form']" ref="formRef" :model="modelValue">
       <ItemFactory
         :component-map="componentMap"
         :form-item="componentMap['FormItem']"
         :config="config"
         :alias="alias"
-        :data="fData"
+        :data="modelValue"
       ></ItemFactory>
     </component>
   </div>
@@ -15,20 +15,17 @@
 <script setup lang="ts">
 import { watch, ref, computed } from "vue";
 import alias, * as componentMap from "./config/index";
-import { deepClone } from "@monorepo/utils";
+import { deepClone, debounce } from "@monorepo/utils";
 import { ItemFactory } from "@monorepo/components";
 
 const props = defineProps({
-  config: {
-    default: null,
-    type: Array<any>,
-  },
-  formData: {
-    default: null,
+  modelValue: {
     type: Object,
+    default: {},
   },
+  config: null,
 });
-const fData = ref();
+const emit = defineEmits(["update:modelValue"]);
 const formRef = ref();
 
 // 利用computed属性实现动态配置项
@@ -37,27 +34,15 @@ const config = computed(() => {
 });
 
 watch(
-  () => props.formData,
-  () => {
-    // 通过配置文件格式化数据
-    fData.value = deepClone(props?.formData) || {};
-  },
-  {
-    deep: true,
-    immediate: true,
-  },
+  () => props.modelValue,
+  debounce(() => {
+    emit("update:modelValue", deepClone(props.modelValue || {}));
+  }),
+  { deep: true, immediate: true },
 );
-
-const validate = () => {
-  return formRef.value.validate((validate: any) => {
-    return !!validate;
-  });
-};
 // 把ref和数据暴露出去
 defineExpose({
-  validate,
   ref: formRef.value,
-  data: fData,
 });
 </script>
 
