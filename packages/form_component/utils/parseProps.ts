@@ -5,7 +5,7 @@
 export default function props(item: any = {}) {
   const obj: any = {};
   for (const i in item) {
-    if (i !== "type") {
+    if (i !== "type" && typeof item[i] !== "function") {
       obj[i] = item[i];
     }
   }

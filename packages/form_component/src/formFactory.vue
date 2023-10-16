@@ -1,6 +1,11 @@
 <template>
   <component :is="componentMap.Form" ref="formRef" :model="data">
-    <component v-for="item of config" v-bind="item" :is="componentMap.FormItem" :key="item?.field">
+    <component
+      v-for="item of config"
+      v-bind="item"
+      :is="componentMap.FormItem"
+      :key="item?.field"
+    >
       <component
         v-if="item?.type !== 'slot'"
         v-model="data[item?.field]"
@@ -8,7 +13,11 @@
         v-on="parseEvent(item)"
         :is="componentMap[alias[item?.type]]"
         :placeholder="getPlaceholder(item)"
-      />
+      >
+        <template v-for="slot of getSlots(item)" :key="slot.name" #[slot.name]>
+          <component :is="slot.VNode"></component>
+        </template>
+      </component>
 
       <slot v-else :name="item?.name" :item="item"></slot>
     </component>
@@ -22,12 +31,11 @@
 <script setup lang="ts">
 import { watch, ref, computed, onMounted } from "vue";
 import { deepClone, debounce } from "@monorepo/utils";
-import { parseEvent, parseProps, getPlaceholder } from "../utils";
+import { parseEvent, parseProps, getPlaceholder, getSlots } from "../utils";
 
 const props = defineProps(["modelValue", "config", "alias", "componentMap"]);
 const emit = defineEmits(["change"]);
 const data = ref<any>({});
-// 利用computed属性实现动态配置项
 const config = computed(() => {
   return props?.config;
 });

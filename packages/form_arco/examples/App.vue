@@ -9,6 +9,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { IconPlus, IconCheckCircle } from "@arco-design/web-vue/es/icon";
 
 const configArray = [
   {
@@ -23,9 +24,8 @@ const configArray = [
     ],
     validateTrigger: ["change", "blur"],
     // parseValue: () => "12313",
-    formatValue: (data, field) => {
-      return data[field] + "aaa";
-    },
+    slot_prefix: IconPlus,
+    slot_suffix: IconCheckCircle,
   },
   {
     type: "password",
@@ -38,8 +38,9 @@ const configArray = [
       },
     ],
     validateTrigger: ["change", "blur"],
-    // parseValue: () => "12313",
-    // formatValue: (data, field) => data[field],
+    focus: () => {
+      console.log(123);
+    },
   },
   {
     type: "input",
