@@ -23,7 +23,9 @@ const configArray = [
     ],
     validateTrigger: ["change", "blur"],
     // parseValue: () => "12313",
-    // formatValue: (data, field) => data[field],
+    formatValue: (data, field) => {
+      return data[field] + "aaa";
+    },
   },
   {
     type: "password",
@@ -83,7 +85,7 @@ const configArray = [
   // },
 ];
 
-const value = ref({});
+const value = ref();
 </script>
 
 <style scoped>

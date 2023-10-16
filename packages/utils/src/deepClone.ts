@@ -2,11 +2,7 @@ export function getType(a: any) {
   const type = typeof a;
   if (type !== "object") return type;
 
-  return Object.prototype.toString
-    .call(a)
-    .split(" ")[1]
-    .replace("]", "")
-    .toLocaleLowerCase();
+  return Object.prototype.toString.call(a).split(" ")[1].replace("]", "").toLocaleLowerCase();
 }
 export function isObject(obj: any) {
   return getType(obj) === "object";

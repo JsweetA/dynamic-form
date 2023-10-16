@@ -1,76 +1,21 @@
 <template>
-  <div v-if="data">
-    <component :is="componentMap['Form']" ref="formRef" :model="data">
-      <ItemFactory
-        :component-map="componentMap"
-        :form-item="componentMap['FormItem']"
-        :config="config"
-        :alias="alias"
-        :data="data"
-      ></ItemFactory>
-    </component>
+  <div>
+    <formFactory
+      :modelValue="modelValue"
+      :alias="alias"
+      :componentMap="componentMap"
+      :config="config"
+      @change="(e: any) => $emit('update:modelValue', e)"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
-import { watch, ref, computed, onMounted } from "vue";
-import alias, * as componentMap from "./config/index";
-import { debounce, deepClone } from "@monorepo/utils";
-import { ItemFactory } from "@monorepo/components";
+import { alias, componentMap } from "./config";
+import { formFactory } from "@monorepo/components";
 
-const props = defineProps(["modelValue", "config"]);
-const emit = defineEmits(["update:modelValue"]);
-const data = ref({});
-const formRef = ref();
-// 利用computed属性实现动态配置项
-const config = computed(() => {
-  return props?.config;
-});
-
-/**
- * 解析函数：用来将数据解析或者初始化数据
- */
-const parse = (config: any) => {
-  console.log("first");
-  const obj: any = {};
-  for (let { field, parseValue } of config) {
-    if (parseValue) {
-      obj[field] = typeof parseValue === "function" ? parseValue() : parseValue;
-    } else {
-      obj[field] = "";
-    }
-  }
-  return obj;
-};
-/**
- * 格式化函数：用来更细粒度的把数据通过想要的形式返回出来
- */
-const format = (value: any, config: any) => {
-  const obj: any = {};
-  for (let { field, formatValue } of config) {
-    // value[field] += 1;
-
-    obj[field] = formatValue ? formatValue(value, field, config) : value[field];
-  }
-  return obj;
-};
-
-watch(
-  data,
-  debounce(() => {
-    console.log(1);
-    emit("update:modelValue", deepClone(format(data.value, config.value)));
-  }),
-  { deep: true },
-);
-
-onMounted(() => {
-  data.value = Object.assign(data.value, parse(config.value));
-});
-// 把ref和数据暴露出去
-defineExpose({
-  ref: formRef.value,
-});
+defineProps(["modelValue", "config"]);
+defineEmits(["update:modelValue"]);
 </script>
 
 <style lang="scss" scoped>
@@ -91,7 +36,6 @@ defineExpose({
     position: absolute;
     width: 100%;
     height: 100%;
-    content: "123";
     // background-color: red;
     opacity: 0;
   }

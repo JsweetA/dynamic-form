@@ -145,9 +145,7 @@ module.exports = {
     breaklineNumber: 100,
     breaklineChar: "|",
     skipQuestions: [],
-    issuePrefixs: [
-      { value: "closed", name: "closed:   ISSUES has been processed" },
-    ],
+    issuePrefixs: [{ value: "closed", name: "closed:   ISSUES has been processed" }],
     customIssuePrefixsAlign: "top",
     emptyIssuePrefixsAlias: "skip",
     customIssuePrefixsAlias: "custom",
