@@ -1,45 +1,72 @@
 <template>
-  <div>
-    <component :is="componentMap['Form']" ref="formRef" :model="modelValue">
+  <div v-if="data">
+    <component :is="componentMap['Form']" ref="formRef" :model="data">
       <ItemFactory
         :component-map="componentMap"
         :form-item="componentMap['FormItem']"
         :config="config"
         :alias="alias"
-        :data="modelValue"
+        :data="data"
       ></ItemFactory>
     </component>
   </div>
 </template>
 
 <script setup lang="ts">
-import { watch, ref, computed } from "vue";
+import { watch, ref, computed, onMounted } from "vue";
 import alias, * as componentMap from "./config/index";
-import { deepClone, debounce } from "@monorepo/utils";
+import { debounce, deepClone } from "@monorepo/utils";
 import { ItemFactory } from "@monorepo/components";
 
-const props = defineProps({
-  modelValue: {
-    type: Object,
-    default: {},
-  },
-  config: null,
-});
+const props = defineProps(["modelValue", "config"]);
 const emit = defineEmits(["update:modelValue"]);
+const data = ref({});
 const formRef = ref();
-
 // 利用computed属性实现动态配置项
 const config = computed(() => {
   return props?.config;
 });
 
+/**
+ * 解析函数：用来将数据解析或者初始化数据
+ */
+const parse = (config: any) => {
+  console.log("first");
+  const obj: any = {};
+  for (let { field, parseValue } of config) {
+    if (parseValue) {
+      obj[field] = typeof parseValue === "function" ? parseValue() : parseValue;
+    } else {
+      obj[field] = "";
+    }
+  }
+  return obj;
+};
+/**
+ * 格式化函数：用来更细粒度的把数据通过想要的形式返回出来
+ */
+const format = (value: any, config: any) => {
+  const obj: any = {};
+  for (let { field, formatValue } of config) {
+    // value[field] += 1;
+
+    obj[field] = formatValue ? formatValue(value, field, config) : value[field];
+  }
+  return obj;
+};
+
 watch(
-  () => props.modelValue,
+  data,
   debounce(() => {
-    emit("update:modelValue", deepClone(props.modelValue || {}));
+    console.log(1);
+    emit("update:modelValue", deepClone(format(data.value, config.value)));
   }),
-  { deep: true, immediate: true },
+  { deep: true },
 );
+
+onMounted(() => {
+  data.value = Object.assign(data.value, parse(config.value));
+});
 // 把ref和数据暴露出去
 defineExpose({
   ref: formRef.value,

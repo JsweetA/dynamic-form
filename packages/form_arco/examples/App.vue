@@ -1,18 +1,30 @@
 <template>
   <div class="container">
-    <Hy-form class="form" v-model="value" :config="formConfig"></Hy-form>
+    <Hy-form class="form" v-model="value" :config="configArray"></Hy-form>
     <div class="value">
       {{ value }}
     </div>
   </div>
 </template>
 
-<script setup>
-import { computed, ref } from "vue";
-import { deepClone } from "@monorepo/utils";
+<script setup lang="ts">
+import { ref } from "vue";
 
-const form = ref();
-const formConfig = [
+const configArray = [
+  {
+    type: "password",
+    label: "原密码",
+    field: "password3",
+    rules: [
+      {
+        required: true,
+        message: "原密码不能为空 ",
+      },
+    ],
+    validateTrigger: ["change", "blur"],
+    // parseValue: () => "12313",
+    // formatValue: (data, field) => data[field],
+  },
   {
     type: "password",
     label: "原密码",
@@ -24,9 +36,8 @@ const formConfig = [
       },
     ],
     validateTrigger: ["change", "blur"],
-    change: () => {
-      console.log("password change1");
-    },
+    // parseValue: () => "12313",
+    // formatValue: (data, field) => data[field],
   },
   {
     type: "input",
@@ -39,9 +50,6 @@ const formConfig = [
       },
     ],
     validateTrigger: ["change", "blur"],
-    change: () => {
-      console.log("password change2");
-    },
   },
   {
     type: "password",
@@ -75,7 +83,7 @@ const formConfig = [
   // },
 ];
 
-const value = ref();
+const value = ref({});
 </script>
 
 <style scoped>
