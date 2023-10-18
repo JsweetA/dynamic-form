@@ -2,19 +2,20 @@
   <div>
     <formFactory
       :modelValue="modelValue"
-      :alias="alias"
+      :alias="aliasComp"
+      :config="toAdaptUI(config)"
       :componentMap="componentMap"
-      :config="config"
       @change="(e: any) => $emit('update:modelValue', e)"
     />
   </div>
+  <!-- <component is="a-input"></component> -->
 </template>
 
 <script setup lang="ts">
-import { alias, componentMap } from "./config";
+import { aliasComp, componentMap, toAdaptUI } from "./config";
 import { formFactory } from "@monorepo/components";
 
-defineProps(["modelValue", "config"]);
+defineProps(["modelValue", "config", "attrAlias"]);
 defineEmits(["update:modelValue"]);
 </script>
 

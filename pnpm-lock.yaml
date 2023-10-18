@@ -80,6 +80,9 @@ importers:
       '@monorepo/components':
         specifier: workspace:^
         version: link:../form_component
+      '@monorepo/utils':
+        specifier: workspace:^
+        version: link:../utils
       vue:
         specifier: ^3.3.4
         version: 3.3.4
@@ -87,9 +90,6 @@ importers:
       '@arco-plugins/vite-vue':
         specifier: ^1.4.5
         version: 1.4.5
-      '@monorepo/utils':
-        specifier: workspace:^
-        version: link:../utils
       '@rollup/plugin-commonjs':
         specifier: ^25.0.4
         version: 25.0.4(rollup@3.29.3)
@@ -129,9 +129,34 @@ importers:
       '@monorepo/utils':
         specifier: workspace:^
         version: link:../utils
+      rollup-plugin-vue:
+        specifier: ^6.0.0
+        version: 6.0.0(@vue/compiler-sfc@3.3.4)
       vue:
         specifier: ^3.3.4
         version: 3.3.4
+    devDependencies:
+      '@rollup/plugin-commonjs':
+        specifier: ^25.0.4
+        version: 25.0.4(rollup@3.29.3)
+      '@rollup/plugin-node-resolve':
+        specifier: ^15.2.3
+        version: 15.2.3(rollup@3.29.3)
+      '@rollup/plugin-terser':
+        specifier: ^0.4.4
+        version: 0.4.4(rollup@3.29.3)
+      rimraf:
+        specifier: ^5.0.5
+        version: 5.0.5
+      rollup:
+        specifier: ^3.29.3
+        version: 3.29.3
+      rollup-plugin-typescript2:
+        specifier: ^0.36.0
+        version: 0.36.0(rollup@3.29.3)(typescript@5.2.2)
+      vue-tsc:
+        specifier: ^1.8.10
+        version: 1.8.10(typescript@5.2.2)
 
   packages/utils:
     devDependencies:
@@ -2374,7 +2399,6 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.2
-    dev: true
 
   /decamelize-keys@1.1.1:
     resolution: {integrity: sha512-WiPxgEirIV0/eIOMcnFBA3/IJZAZqKnwAwWyvvdi4lsr1WCN22nhdf/3db3DoZcUjTV2SqfzIwNyp6y2xs3nmg==}
@@ -2764,7 +2788,6 @@ packages:
 
   /estree-walker@0.6.1:
     resolution: {integrity: sha512-SqmZANLWS0mnatqbSfRP5g8OXZC12Fgg1IwNtLsyHDzJizORW4khDfjPqJZsemPWBB2uqykUah5YpQ6epsqC/w==}
-    dev: true
 
   /estree-walker@2.0.2:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
@@ -3254,6 +3277,10 @@ packages:
     dependencies:
       function-bind: 1.1.1
     dev: true
+
+  /hash-sum@2.0.0:
+    resolution: {integrity: sha512-WdZTbAByD+pHfl/g9QSsBIIwy8IT+EsPiKDs0KNX+zSHhdDLFKdZu0BQHljvO+0QI/BasbMSUa8wYNCZTvhslg==}
+    dev: false
 
   /he@1.2.0:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
@@ -4075,7 +4102,6 @@ packages:
 
   /ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
-    dev: true
 
   /muggle-string@0.3.1:
     resolution: {integrity: sha512-ckmWDJjphvd/FvZawgygcUeQCxzvohjFO5RxTjj4eq8kw359gFF3E1brjfI+viLMxss5JrHTDRHZvu2/tuy0Qg==}
@@ -4657,11 +4683,23 @@ packages:
       yargs: 17.7.2
     dev: true
 
+  /rollup-plugin-vue@6.0.0(@vue/compiler-sfc@3.3.4):
+    resolution: {integrity: sha512-oVvUd84d5u73M2HYM3XsMDLtZRIA/tw2U0dmHlXU2UWP5JARYHzh/U9vcxaN/x/9MrepY7VH3pHFeOhrWpxs/Q==}
+    peerDependencies:
+      '@vue/compiler-sfc': '*'
+    dependencies:
+      '@vue/compiler-sfc': 3.3.4
+      debug: 4.3.4
+      hash-sum: 2.0.0
+      rollup-pluginutils: 2.8.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
   /rollup-pluginutils@2.8.2:
     resolution: {integrity: sha512-EEp9NhnUkwY8aif6bxgovPHMoMoNr2FulJziTndpt5H9RdwC47GSGuII9XxpSdzVGM0GWrNPHV6ie1LTNJPaLQ==}
     dependencies:
       estree-walker: 0.6.1
-    dev: true
 
   /rollup@3.29.3:
     resolution: {integrity: sha512-T7du6Hum8jOkSWetjRgbwpM6Sy0nECYrYRSmZjayFcOddtKJWU4d17AC3HNUk7HRuqy4p+G7aEZclSHytqUmEg==}

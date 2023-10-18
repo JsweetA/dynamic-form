@@ -45,20 +45,12 @@ export default defineConfig({
       // the proper extensions will be added
       fileName: "form_arco",
     },
-    chunkSizeWarningLimit: 5000, // chunk大小超过5000kb警告
-    // [https://terser.org/docs/api-reference#minify-options]
-    assetsInlineLimit: 4096, // 小于这个的资源将自动base64
-    assetsDir: "statics/assets", // 指定生成静态资源的存放路径
+
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖
       external: ["vue"],
 
       output: [
-        {
-          dir: "./dist",
-          format: "cjs",
-          entryFileNames: "form_arco.cjs",
-        },
         {
           dir: "./dist",
           name: "form_arco",
@@ -74,7 +66,7 @@ export default defineConfig({
           entryFileNames: "form_arco.mjs",
         },
         {
-          dir: "./chunk",
+          dir: "./dist/chunk",
           name: "form_arco",
           format: "es",
           chunkFileNames: "[name].js",

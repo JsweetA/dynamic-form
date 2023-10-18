@@ -9,13 +9,16 @@
       <component
         v-if="item?.type !== 'slot'"
         v-model="data[item?.field]"
-        v-bind="parseProps(item)"
-        v-on="parseEvent(item)"
+        v-bind="item.componentProps"
+        v-on="item.componentEvent"
         :is="componentMap[alias[item?.type]]"
-        :placeholder="getPlaceholder(item)"
       >
-        <template v-for="slot of getSlots(item)" :key="slot.name" #[slot.name]>
-          <component :is="slot.VNode"></component>
+        <template
+          v-for="[key, VNode] in Object.entries(item.componentSlots || {})"
+          :key="key"
+          #[key]
+        >
+          <component :is="VNode"></component>
         </template>
       </component>
 
@@ -31,7 +34,6 @@
 <script setup lang="ts">
 import { watch, ref, computed, onMounted } from "vue";
 import { deepClone, debounce } from "@monorepo/utils";
-import { parseEvent, parseProps, getPlaceholder, getSlots } from "../utils";
 
 const props = defineProps(["modelValue", "config", "alias", "componentMap"]);
 const emit = defineEmits(["change"]);
@@ -39,7 +41,10 @@ const data = ref<any>({});
 const config = computed(() => {
   return props?.config;
 });
-
+watch(
+  data.value,
+  debounce(() => emit("change", deepClone(data.value))),
+);
 // /**
 //  * 初始化函数：用来将数据解析或者初始化数据
 //  */
@@ -66,12 +71,9 @@ const config = computed(() => {
 //   return obj;
 // };
 
-watch(
-  data.value,
-  debounce(() => emit("change", deepClone(data.value))),
-);
-
 onMounted(() => {
+  console.log(1231321231);
+
   Object.assign(data.value, props.modelValue);
 });
 </script>

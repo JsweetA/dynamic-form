@@ -6,7 +6,7 @@
   "module": "./dist/form_arco.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve:web": "vite",
+    "serve": "vite",
     "build": "vue-tsc && vite build"
   },
   "files": [
@@ -21,7 +21,8 @@
   "dependencies": {
     "vue": "^3.3.4",
     "@arco-design/web-vue": "^2.51.1",
-    "@monorepo/components": "workspace:^"
+    "@monorepo/components": "workspace:^",
+    "@monorepo/utils": "workspace:^"
   },
   "publishConfig": {
     "access": "public",
@@ -29,7 +30,6 @@
   },
   "devDependencies": {
     "@arco-plugins/vite-vue": "^1.4.5",
-    "@monorepo/utils": "workspace:^",
     "@rollup/plugin-commonjs": "^25.0.4",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.5",

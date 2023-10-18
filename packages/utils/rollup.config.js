@@ -46,7 +46,7 @@ const config = {
 
   // 使用的插件
   // 注意，这里的插件使用是有顺序的，先把ts编译为js，然后查找依赖，最后压缩
-  plugins: [ts({}), nodeResolve(), commonjs()],
+  plugins: [ts({}), nodeResolve(), commonjs(), terser()],
 };
 
 export default config;
