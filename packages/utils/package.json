@@ -1,5 +1,5 @@
 {
-  "name": "@monorepo/utils",
+  "name": "@dynamic-form/utils",
   "version": "1.0.2",
   "description": "一些工具函数",
   "type": "module",
@@ -15,7 +15,7 @@
     "package.json"
   ],
   "keywords": [],
-  "author": "monorepo",
+  "author": "dynamic-form",
   "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.4",

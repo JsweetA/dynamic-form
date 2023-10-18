@@ -11,6 +11,6 @@ declare global {
   import "@arco-design/web-vue/es/components";
 }
 
-declare module "@monorepo/utils";
-declare module "@monorepo/components";
+declare module "@dynamic-form/utils";
+declare module "@dynamic-form/components";
 declare module "@rollup/plugin-terser";

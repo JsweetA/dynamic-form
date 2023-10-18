@@ -34,7 +34,7 @@
 
 <script setup lang="ts">
 import { watch, ref, computed, onMounted } from "vue";
-import { deepClone, debounce } from "@monorepo/utils";
+import { deepClone, debounce } from "@dynamic-form/utils";
 
 const props = defineProps(["modelValue", "config", "alias", "componentMap"]);
 const emit = defineEmits(["change"]);

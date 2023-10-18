@@ -9,7 +9,7 @@
 
 <script setup>
 import { computed, ref } from "vue";
-import { deepClone } from "@monorepo/utils";
+import { deepClone } from "@dynamic-form/utils";
 
 const form = ref();
 const formConfig = [

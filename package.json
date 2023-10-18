@@ -1,5 +1,5 @@
 {
-  "name": "monorepo",
+  "name": "dynamic-form",
   "version": "1.0.1",
   "description": "",
   "main": "dist/Hy-form.mjs",
@@ -19,9 +19,9 @@
     "build:arco": "cd ./packages/form_arco && pnpm build"
   },
   "bugs": {
-    "url": "https://github.com/monorepoA/monorepo/issues"
+    "url": "https://github.com/monorepoA/dynamic-form/issues"
   },
-  "homepage": "https://github.com/monorepoA/monorepo#readme",
+  "homepage": "https://github.com/monorepoA/dynamic-form#readme",
   "keywords": [],
   "author": "",
   "license": "MIT",

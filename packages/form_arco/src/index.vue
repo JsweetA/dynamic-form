@@ -14,8 +14,8 @@
 <script setup lang="ts">
 import { aliasComp, aliasUI } from "./config";
 import * as componentMap from "./parser";
-import { formFactory } from "@monorepo/components";
-import { toAdaptUI } from "@monorepo/utils";
+import { formFactory } from "@dynamic-form/components";
+import { toAdaptUI } from "@dynamic-form/utils";
 
 defineProps(["modelValue", "config", "attrAlias"]);
 defineEmits(["update:modelValue"]);

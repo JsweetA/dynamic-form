@@ -1,5 +1,5 @@
 {
-  "name": "@monorepo/components",
+  "name": "@dynamic-form/components",
   "version": "1.0.1",
   "description": "存放一些通用的组件",
   "main": "./index.js",
@@ -10,10 +10,10 @@
     "build": " pnpm clean && rollup -c"
   },
   "keywords": [],
-  "author": "monorepo",
+  "author": "dynamic-form",
   "license": "ISC",
   "dependencies": {
-    "@monorepo/utils": "workspace:^",
+    "@dynamic-form/utils": "workspace:^",
     "rollup-plugin-vue": "^6.0.0",
     "vue": "^3.3.4"
   },

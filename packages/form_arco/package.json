@@ -1,5 +1,5 @@
 {
-  "name": "@monorepo/form_arco",
+  "name": "@dynamic-form/form_arco",
   "version": "1.0.3",
   "description": "动态表单，arco组件库",
   "main": "./dist/form_arco.umd.js",
@@ -17,12 +17,12 @@
     "dist"
   ],
   "keywords": [],
-  "author": "monorepo",
+  "author": "dynamic-form",
   "dependencies": {
     "vue": "^3.3.4",
     "@arco-design/web-vue": "^2.51.1",
-    "@monorepo/components": "workspace:^",
-    "@monorepo/utils": "workspace:^"
+    "@dynamic-form/components": "workspace:^",
+    "@dynamic-form/utils": "workspace:^"
   },
   "publishConfig": {
     "access": "public",

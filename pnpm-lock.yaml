@@ -59,10 +59,10 @@ importers:
         specifier: ^3.3.4
         version: 3.3.4
     devDependencies:
-      '@monorepo/form_arco':
+      '@dynamic-form/form_arco':
         specifier: workspace:^
         version: link:../../packages/form_arco
-      '@monorepo/utils':
+      '@dynamic-form/utils':
         specifier: workspace:^
         version: link:../../packages/utils
       '@vitejs/plugin-vue':
@@ -77,10 +77,10 @@ importers:
       '@arco-design/web-vue':
         specifier: ^2.51.1
         version: 2.51.1(vue@3.3.4)
-      '@monorepo/components':
+      '@dynamic-form/components':
         specifier: workspace:^
         version: link:../form_component
-      '@monorepo/utils':
+      '@dynamic-form/utils':
         specifier: workspace:^
         version: link:../utils
       vue:
@@ -126,7 +126,7 @@ importers:
 
   packages/form_component:
     dependencies:
-      '@monorepo/utils':
+      '@dynamic-form/utils':
         specifier: workspace:^
         version: link:../utils
       rollup-plugin-vue:
@@ -160,10 +160,10 @@ importers:
 
   packages/form_naive:
     dependencies:
-      '@monorepo/components':
+      '@dynamic-form/components':
         specifier: workspace:^
         version: link:../form_component
-      '@monorepo/utils':
+      '@dynamic-form/utils':
         specifier: workspace:^
         version: link:../utils
       vue:
