@@ -13,7 +13,8 @@
     "commit": "git add -A && cz && git push",
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve:demo-vue3": "cd ./demo/vue3 && pnpm serve",
-    "serve:arco-dev": "cd ./packages/form_arco && vite",
+    "serve:arco": "cd ./packages/form_arco && vite",
+    "serve:naive": "cd ./packages/form_naive && vite",
     "mp": "cd ./examples/uniapp-demo && pnpm mp",
     "build:arco": "cd ./packages/form_arco && pnpm build"
   },

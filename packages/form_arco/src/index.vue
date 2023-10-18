@@ -3,7 +3,7 @@
     <formFactory
       :modelValue="modelValue"
       :alias="aliasComp"
-      :config="toAdaptUI(config)"
+      :config="toAdaptUI(config, aliasUI)"
       :componentMap="componentMap"
       @change="(e: any) => $emit('update:modelValue', e)"
     />
@@ -12,8 +12,10 @@
 </template>
 
 <script setup lang="ts">
-import { aliasComp, componentMap, toAdaptUI } from "./config";
+import { aliasComp, aliasUI } from "./config";
+import * as componentMap from "./parser";
 import { formFactory } from "@monorepo/components";
+import { toAdaptUI } from "@monorepo/utils";
 
 defineProps(["modelValue", "config", "attrAlias"]);
 defineEmits(["update:modelValue"]);

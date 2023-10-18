@@ -1,16 +1,16 @@
 <template>
-  <component :is="componentMap.Form" ref="formRef" :model="data">
+  <component :is="componentMap[alias['form']]" :model="data">
     <component
       v-for="item of config"
       v-bind="item"
-      :is="componentMap.FormItem"
+      :is="componentMap[alias['formItem']]"
       :key="item?.field"
     >
       <component
         v-if="item?.type !== 'slot'"
         v-model="data[item?.field]"
-        v-bind="item.componentProps"
-        v-on="item.componentEvent"
+        v-on="item.componentEvent || {}"
+        v-bind="item.componentProps || {}"
         :is="componentMap[alias[item?.type]]"
       >
         <template
@@ -23,9 +23,10 @@
       </component>
 
       <slot v-else :name="item?.name" :item="item"></slot>
+      <!-- {{ alias[item?.type] }} -->
     </component>
 
-    <component :is="componentMap.FormItem" v-if="$slots?.default">
+    <component :is="componentMap[alias['formItem']]" v-if="$slots?.default">
       <slot></slot>
     </component>
   </component>
@@ -45,6 +46,7 @@ watch(
   data.value,
   debounce(() => emit("change", deepClone(data.value))),
 );
+
 // /**
 //  * 初始化函数：用来将数据解析或者初始化数据
 //  */
@@ -72,8 +74,6 @@ watch(
 // };
 
 onMounted(() => {
-  console.log(1231321231);
-
   Object.assign(data.value, props.modelValue);
 });
 </script>
