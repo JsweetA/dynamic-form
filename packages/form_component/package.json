@@ -4,6 +4,7 @@
   "description": "存放一些通用的组件",
   "main": "./index.js",
   "type": "module",
+  "typings": "./types",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist",

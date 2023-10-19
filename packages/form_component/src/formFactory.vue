@@ -1,5 +1,5 @@
 <template>
-  <component :is="componentMap[alias['form']]" :model="data">
+  <component :is="componentMap[alias['form']]" :model="data" ref="form">
     <component
       v-for="item of config"
       v-bind="item"
@@ -36,17 +36,28 @@
 import { watch, ref, computed, onMounted } from "vue";
 import { deepClone, debounce } from "@dynamic-form/utils";
 
-const props = defineProps(["modelValue", "config", "alias", "componentMap"]);
+const props = defineProps([
+  "modelValue",
+  "config",
+  "alias",
+  "componentMap",
+  "formRef",
+]);
 const emit = defineEmits(["change"]);
 const data = ref<any>({});
+const form = ref();
 const config = computed(() => {
   return props?.config;
 });
+
 watch(
   data.value,
   debounce(() => emit("change", deepClone(data.value))),
 );
-
+onMounted(() => {
+  Object.assign(props.formRef, form.value);
+  Object.assign(data.value, props.modelValue);
+});
 // /**
 //  * 初始化函数：用来将数据解析或者初始化数据
 //  */
@@ -72,8 +83,4 @@ watch(
 //   }
 //   return obj;
 // };
-
-onMounted(() => {
-  Object.assign(data.value, props.modelValue);
-});
 </script>

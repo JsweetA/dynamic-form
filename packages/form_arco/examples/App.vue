@@ -1,20 +1,28 @@
 <template>
   <div class="container">
-    <Hy-form class="form" v-model="value" :config="configArray"></Hy-form>
-
+    <d-form
+      v-model="value"
+      ref="form"
+      :config="configArray"
+      class="form"
+    ></d-form>
     <div class="value">
       {{ value }}
     </div>
+
+    <n-input></n-input>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import { configArray } from "./config";
 
+const form = ref({});
 const value = ref();
-</script>
 
+watch(form, () => console.log(form.value), { deep: true });
+</script>
 <style scoped>
 .container {
   width: 100vw;

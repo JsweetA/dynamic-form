@@ -1,6 +1,11 @@
 <template>
   <div class="container">
-    <d-form class="form" v-model="value" :config="configArray"></d-form>
+    <d-form
+      v-model="value"
+      ref="form"
+      :config="configArray"
+      class="form"
+    ></d-form>
     <div class="value">
       {{ value }}
     </div>
@@ -13,7 +18,7 @@
 import { ref, watch } from "vue";
 import { configArray } from "./config";
 
-const form = ref();
+const form = ref({});
 const value = ref();
 
 watch(form, () => console.log(form.value), { deep: true });

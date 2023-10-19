@@ -1,6 +1,7 @@
-import { IconPlus, IconCheckCircle } from "@arco-design/web-vue/es/icon";
-
-export const configArray = [
+import { IconPlus } from "@arco-design/web-vue/es/icon";
+import { FormConfig } from "@dynamic-form/components/types";
+import { h } from "vue";
+export const configArray: FormConfig = [
   {
     type: "input",
     label: "原密码",
@@ -9,9 +10,9 @@ export const configArray = [
       {
         required: true,
         message: "原密码不能为空 ",
+        trigger: ["change", "blur"],
       },
     ],
-    validateTrigger: ["change", "blur"],
     /**
      * 组件的属性
      */
@@ -22,8 +23,8 @@ export const configArray = [
       },
     },
     componentSlots: {
-      prefix: IconPlus,
-      suffix: IconCheckCircle,
+      prefix: h(IconPlus),
+      suffix: h(IconPlus),
     },
   },
   {
@@ -34,9 +35,10 @@ export const configArray = [
       {
         required: true,
         message: "原密码不能为空 ",
+        trigger: ["change", "blur"],
       },
     ],
-    validateTrigger: ["change", "blur"],
+    // validateTrigger: ["change", "blur"],
   },
   {
     type: "input",
@@ -46,9 +48,9 @@ export const configArray = [
       {
         required: true,
         message: "原密码不能为空 ",
+        trigger: ["change", "blur"],
       },
     ],
-    validateTrigger: ["change", "blur"],
   },
   {
     type: "password",
@@ -58,9 +60,10 @@ export const configArray = [
       {
         required: true,
         message: "新密码不能为空 ",
+        trigger: ["change", "blur"],
       },
     ],
-    validateTrigger: ["change", "blur"],
+    // validateTrigger: ["change", "blur"],
   },
 
   {
@@ -72,9 +75,10 @@ export const configArray = [
       {
         required: true,
         message: "确认密码不能为空 ",
+        trigger: ["change", "blur"],
       },
     ],
-    validateTrigger: ["change", "blur"],
+    // validateTrigger: ["change", "blur"],
   },
   // {
   // 	type: "slot",

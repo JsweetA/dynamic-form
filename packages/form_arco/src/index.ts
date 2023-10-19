@@ -3,6 +3,6 @@ import dform from "./index.vue";
 
 export default {
   install(app: App) {
-    app.component("Hy-form", dform);
+    app.component("d-form", dform);
   },
 };

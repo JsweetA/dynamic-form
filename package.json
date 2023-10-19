@@ -2,8 +2,7 @@
   "name": "dynamic-form",
   "version": "1.0.1",
   "description": "",
-  "main": "dist/Hy-form.mjs",
-  "module": "dist/Hy-form.umd.js",
+  "types": "./packages/types/index.d.ts",
   "scripts": {
     "prepare": "husky install",
     "lint": "eslint ./ --ext **/*.{js,jsx,tsx,ts,less,json,vue} --max-warnings=0",
