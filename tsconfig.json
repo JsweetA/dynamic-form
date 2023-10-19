@@ -18,16 +18,19 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "declaration": true,
+
     /* js */
     "allowJs": true,
 
     // project
     "baseUrl": ".",
     "paths": {
-      "@types": ["./packages/types"]
+      "@/*": ["src/*"],
+      "@": ["src"]
     }
   },
 
-  "exclude": ["node_modules"]
+  "include": ["packages/**/*"],
+  "exclude": ["node_modules"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

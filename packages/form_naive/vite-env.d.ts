@@ -7,9 +7,6 @@ declare module "*.vue" {
 interface ImportMetaEnv {
   readonly VITE_API_BASE_URL: string;
 }
-declare global {
-  import "@arco-design/web-vue/es/components";
-}
 
 declare module "@dynamic-form/utils";
 declare module "@dynamic-form/components";

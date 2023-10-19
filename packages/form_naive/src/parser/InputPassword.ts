@@ -1,6 +1,7 @@
 import { NInput } from "naive-ui";
 
-export const NInputPassword = Object.assign(NInput, {
+export const NInputPassword = {
+  ...NInput,
   name: "InputPassword",
   props: {
     ...NInput.props,
@@ -8,4 +9,4 @@ export const NInputPassword = Object.assign(NInput, {
       default: "password",
     },
   },
-});
+};
