@@ -1,11 +1,12 @@
 import { IconPlus } from "@arco-design/web-vue/es/icon";
 import { FormConfig } from "@dynamic-form/components/types";
 import { h } from "vue";
+
 export const configArray: FormConfig = [
   {
     type: "input",
-    label: "原密码",
-    field: "password3",
+    label: "输入框",
+    field: "input",
     rules: [
       {
         required: true,
@@ -29,7 +30,7 @@ export const configArray: FormConfig = [
   },
   {
     type: "password",
-    label: "原密码",
+    label: "密码框",
     field: "password",
     rules: [
       {
@@ -38,12 +39,11 @@ export const configArray: FormConfig = [
         trigger: ["change", "blur"],
       },
     ],
-    // validateTrigger: ["change", "blur"],
   },
   {
-    type: "input",
-    label: "原密码",
-    field: "password2",
+    type: "select",
+    label: "下拉框",
+    field: "select",
     rules: [
       {
         required: true,
@@ -51,11 +51,35 @@ export const configArray: FormConfig = [
         trigger: ["change", "blur"],
       },
     ],
+    componentProps: {
+      options: [
+        {
+          value: "beijing",
+          label: "Beijing",
+          other: "extra",
+        },
+        {
+          value: "shanghai",
+          label: "Shanghai",
+          other: "extra",
+        },
+        {
+          value: "guangzhou",
+          label: "Guangzhou",
+          other: "extra",
+        },
+        {
+          value: "chengdu",
+          label: "Chengdu",
+          other: "extra",
+        },
+      ],
+    },
   },
   {
-    type: "password",
-    label: "新密码",
-    field: "newpsw",
+    type: "radio",
+    label: "单选按钮",
+    field: "radio",
     rules: [
       {
         required: true,
@@ -63,25 +87,65 @@ export const configArray: FormConfig = [
         trigger: ["change", "blur"],
       },
     ],
-    // validateTrigger: ["change", "blur"],
+    componentProps: {
+      options: [
+        {
+          value: "beijing",
+          label: "Beijing",
+          other: "extra",
+        },
+        {
+          value: "shanghai",
+          label: "Shanghai",
+          other: "extra",
+        },
+        {
+          value: "guangzhou",
+          label: "Guangzhou",
+          other: "extra",
+        },
+        {
+          value: "chengdu",
+          label: "Chengdu",
+          other: "extra",
+        },
+      ],
+    },
   },
-
   {
-    type: "password",
-    label: "确认密码",
-    field: "repsw",
-
+    type: "checkbox",
+    label: "复选框",
+    field: "checkbox",
     rules: [
       {
         required: true,
-        message: "确认密码不能为空 ",
+        message: "123132 ",
         trigger: ["change", "blur"],
       },
     ],
-    // validateTrigger: ["change", "blur"],
+    componentProps: {
+      options: [
+        {
+          value: "beijing",
+          label: "Beijing",
+          other: "extra",
+        },
+        {
+          value: "shanghai",
+          label: "Shanghai",
+          other: "extra",
+        },
+        {
+          value: "guangzhou",
+          label: "Guangzhou",
+          other: "extra",
+        },
+        {
+          value: "chengdu",
+          label: "Chengdu",
+          other: "extra",
+        },
+      ],
+    },
   },
-  // {
-  // 	type: "slot",
-  // 	name: "buttonArea",
-  // },
 ];

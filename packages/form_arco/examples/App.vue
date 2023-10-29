@@ -1,27 +1,22 @@
 <template>
   <div class="container">
-    <d-form
-      v-model="value"
-      ref="form"
-      :config="configArray"
-      class="form"
-    ></d-form>
+    <d-form v-model="value" ref="form" :config="config" class="form"></d-form>
     <div class="value">
       {{ value }}
     </div>
-
-    <n-input></n-input>
+    <button @click="add">新增</button>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { ref } from "vue";
 import { configArray } from "./config";
 
 const form = ref({});
 const value = ref();
-
-watch(form, () => console.log(form.value), { deep: true });
+// 如果需要动态添加配置文件，需要ref包装一层
+const config = ref(configArray);
+const add = () => {};
 </script>
 <style scoped>
 .container {

@@ -1,23 +1,23 @@
 import {
   Form,
-  FormItem,
-  Checkbox,
+  CheckboxGroup,
   DatePicker,
   Input,
   InputNumber,
   InputPassword,
-  Radio,
+  RadioGroup,
   Select,
+  FormItem,
 } from "@arco-design/web-vue";
 
 export {
   Form,
   FormItem,
-  Checkbox,
+  CheckboxGroup as Checkbox,
   DatePicker,
   Input,
   InputNumber,
   InputPassword,
-  Radio,
+  RadioGroup as Radio,
   Select,
 };

@@ -1,11 +1,14 @@
 <template>
+  <!-- Form -->
   <component :is="componentMap[alias['form']]" :model="data" ref="form">
+    <!-- FormItem -->
     <component
       v-for="item of config"
       v-bind="item"
       :is="componentMap[alias['formItem']]"
       :key="item?.field"
     >
+      <!-- 表单组件 -->
       <component
         v-if="item?.type !== 'slot'"
         v-model="data[item?.field]"
@@ -23,7 +26,6 @@
       </component>
 
       <slot v-else :name="item?.name" :item="item"></slot>
-      <!-- {{ alias[item?.type] }} -->
     </component>
 
     <component :is="componentMap[alias['formItem']]" v-if="$slots?.default">
@@ -34,7 +36,7 @@
 
 <script setup lang="ts">
 import { watch, ref, computed, onMounted } from "vue";
-import { deepClone, debounce } from "@dynamic-form/utils";
+import { deepClone } from "@dynamic-form/utils";
 
 const props = defineProps([
   "modelValue",
@@ -50,37 +52,9 @@ const config = computed(() => {
   return props?.config;
 });
 
-watch(
-  data.value,
-  debounce(() => emit("change", deepClone(data.value))),
-);
+watch(data.value, () => emit("change", deepClone(data.value)));
 onMounted(() => {
   Object.assign(props.formRef, form.value);
   Object.assign(data.value, props.modelValue);
 });
-// /**
-//  * 初始化函数：用来将数据解析或者初始化数据
-//  */
-// const initData = (config: any) => {
-//   const obj: any = {};
-//   for (let { field, initValue } of config) {
-//     if (initValue) {
-//       obj[field] = typeof initValue === "function" ? initValue() : initValue;
-//     } else {
-//       obj[field] = "";
-//     }
-//   }
-//   return obj;
-// };
-// /**
-//  * 格式化函数：用来更细粒度的把数据通过想要的形式返回出来
-//  */
-// const format = (value: any, config: any) => {
-//   const obj: any = {};
-//   for (let { field, formatValue } of config) {
-//     // console.log();
-//     obj[field] = formatValue ? formatValue(value, field, config) : value[field];
-//   }
-//   return obj;
-// };
 </script>
